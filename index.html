@@ -15,10 +15,10 @@
 <link rel="apple-touch-icon" href="icon-180.png">
 <title>Jaén · 20-22 nov 2026</title>
 <style>
-:root{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#9A5F08;--wn:#7D5D10;--cr:#9A2A2A;--ok:#2A6F35}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#D4A84A;--wn:#E0C070;--cr:#F08080;--ok:#6CC47C}}
-:root[data-theme=dark]{--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#D4A84A;--wn:#E0C070;--cr:#F08080;--ok:#6CC47C}
-:root[data-theme=light]{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#9A5F08;--wn:#7D5D10;--cr:#9A2A2A;--ok:#2A6F35}
+:root{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#9A5F08;--wn:#7D5D10;--cr:#9A2A2A;--ok:#2A6F35;--dusk1:#27345F;--dusk2:#7A4A6B;--dusktx:#FFFFFF}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#D4A84A;--wn:#E0C070;--cr:#F08080;--ok:#6CC47C;--dusk1:#1C2650;--dusk2:#51376B;--dusktx:#F3EFFA}}
+:root[data-theme=dark]{--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#D4A84A;--wn:#E0C070;--cr:#F08080;--ok:#6CC47C;--dusk1:#1C2650;--dusk2:#51376B;--dusktx:#F3EFFA}
+:root[data-theme=light]{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#9A5F08;--wn:#7D5D10;--cr:#9A2A2A;--ok:#2A6F35;--dusk1:#27345F;--dusk2:#7A4A6B;--dusktx:#FFFFFF}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
@@ -28,35 +28,47 @@ h1{font-size:2rem}h2{font-size:1.5rem;margin-top:22px}h3{font-size:1.1rem;margin
 p{margin:4px 0}
 a{color:var(--ac)}
 .mu{color:var(--mu);font-size:.95rem}
-.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:14px;margin:10px 0}
-.hero{background:var(--ac);color:var(--on);border-radius:14px;padding:18px;margin:6px 0 12px}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px 16px;margin:12px 0;box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 9%,transparent)}
+.card h3{margin-top:0;display:flex;align-items:center;gap:8px}
+.card.k-next{border-left:6px solid var(--ac)}.card.k-night{border-left:6px solid var(--dusk2)}
+.hero{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 72%,var(--ink)));color:var(--on);border-radius:20px;padding:22px 20px;margin:8px 0 14px;box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 28%,transparent);position:relative;overflow:hidden}
+.hero:after{content:attr(data-g);position:absolute;right:12px;top:4px;font-size:5rem;line-height:1;opacity:.22;pointer-events:none}
 .hero b{font:700 2.6rem/1 Georgia,serif;display:block}
 .stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.stats span{border:1px solid currentColor;border-radius:999px;padding:4px 12px;font-size:.95rem}
-nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:9}
-nav.tabs button{flex:1;min-height:56px;border:0;background:none;color:var(--mu);font:600 .9rem system-ui,sans-serif;cursor:pointer}
-nav.tabs button[aria-selected=true]{color:var(--ac);box-shadow:inset 0 3px 0 var(--ac)}
+.stats span{background:color-mix(in srgb,var(--on) 18%,transparent);border-radius:999px;padding:4px 12px;font-size:.95rem;font-weight:600}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);box-shadow:0 -4px 14px color-mix(in srgb,var(--ink) 8%,transparent);padding-bottom:env(safe-area-inset-bottom,0px);z-index:9}
+nav.tabs button{flex:1;min-height:60px;border:0;background:none;color:var(--mu);font:600 .9rem system-ui,sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+nav.tabs .ic{font-size:1.35rem;line-height:1;filter:grayscale(1);opacity:.7}
+nav.tabs button[aria-selected=true]{color:var(--ac)}
+nav.tabs button[aria-selected=true] .ic{filter:none;opacity:1}
+nav.tabs button[aria-selected=true] .pill{background:color-mix(in srgb,var(--ac) 16%,transparent);border-radius:999px;padding:2px 14px}
+nav.tabs .pill{display:inline-block;padding:2px 14px}
 button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--oil);outline-offset:2px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border:1px solid var(--ac);border-radius:10px;background:none;color:var(--ac);font:600 .95rem system-ui,sans-serif;text-decoration:none;cursor:pointer}
 .btn.fill{background:var(--ac);color:var(--on)}
 .btn[aria-pressed=true]{background:var(--ac);color:var(--on)}
 .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-.chip{display:inline-block;border:1px solid var(--ln);border-radius:999px;padding:2px 10px;font-size:.9rem;font-weight:600}
-.c-ok{color:var(--ok);border-color:var(--ok)}.c-warn{color:var(--wn);border-color:var(--wn)}.c-bad{color:var(--cr);border-color:var(--cr)}
-.alert{border-left:5px solid var(--ln);padding:8px 12px;margin:8px 0;background:var(--sf);border-radius:0 10px 10px 0}
+.chip{display:inline-block;border:1px solid var(--ln);border-radius:999px;padding:2px 10px;font-size:.9rem;font-weight:600;background:color-mix(in srgb,var(--ink) 6%,var(--sf))}
+.c-ok{color:var(--ok);border-color:var(--ok);background:color-mix(in srgb,var(--ok) 13%,var(--sf))}.c-warn{color:var(--wn);border-color:var(--wn);background:color-mix(in srgb,var(--wn) 13%,var(--sf))}.c-bad{color:var(--cr);border-color:var(--cr);background:color-mix(in srgb,var(--cr) 13%,var(--sf))}
+.alert{border-left:6px solid var(--ln);padding:10px 14px;margin:10px 0;background:var(--sf);border-radius:0 14px 14px 0;box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 7%,transparent)}
+.alert.atencion{background:color-mix(in srgb,var(--wn) 9%,var(--sf))}.alert.critico{background:color-mix(in srgb,var(--cr) 9%,var(--sf))}
 .alert.atencion{border-color:var(--wn)}.alert.critico{border-color:var(--cr)}.alert.info{border-color:var(--ac)}
 .alert small{display:block;color:var(--mu);font-size:.9rem}
-ol.tl{list-style:none;margin:0;padding:0 0 0 4px;border-left:2px solid var(--ln)}
-ol.tl>li{position:relative;padding:0 0 16px 18px}
-ol.tl>li:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
-ol.tl>li.star:before{background:var(--oil);border-color:var(--oil)}
+ol.tl{list-style:none;margin:6px 0;padding:0 0 0 22px;border-left:3px solid color-mix(in srgb,var(--ac) 30%,var(--ln))}
+ol.tl>li{position:relative;padding:0 0 14px 22px}
+ol.tl>li:before{content:attr(data-i);position:absolute;left:-23px;top:2px;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--ac) 14%,var(--sf));border:2px solid var(--ac);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+ol.tl>li.star:before{background:color-mix(in srgb,var(--oil) 20%,var(--sf));border-color:var(--oil)}
+ol.tl>li>.it{background:var(--sf);border:1px solid var(--ln);border-radius:14px;padding:10px 14px;margin-left:16px;box-shadow:0 2px 6px color-mix(in srgb,var(--ink) 7%,transparent)}
+ol.tl>li.star>.it{border-color:var(--oil)}
 .t{font-weight:700;color:var(--ac);font-variant-numeric:tabular-nums}
 .what{font-weight:600}
 .opt{color:var(--mu);font-weight:400}
 .chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0}
 .chips .btn{white-space:nowrap}
 .daynav{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(6px + env(safe-area-inset-top,0px)) 0 6px;border-bottom:1px solid var(--ln)}
-h2[id^=d-]{scroll-margin-top:76px}
+h2[id^=d-]{scroll-margin-top:76px;background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 22%,var(--bg)),var(--bg));border-left:6px solid var(--ac);border-radius:0 14px 14px 0;padding:10px 14px;margin:26px 0 8px}
+.sun{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:6px;background:linear-gradient(135deg,var(--dusk1),var(--dusk2));color:var(--dusktx);border-radius:16px;padding:12px 14px;margin:12px 0;box-shadow:0 4px 14px color-mix(in srgb,var(--dusk1) 30%,transparent)}
+.sun div{text-align:center}.sun small{display:block;font-size:.85rem;opacity:.9}.sun b{font:700 1.05rem/1.3 system-ui,sans-serif;font-variant-numeric:tabular-nums}.sun em{grid-column:1/-1;text-align:center;font-style:normal;font-size:.9rem;opacity:.9}
 details.learn{margin:8px 0 0;border:1px solid var(--ln);border-radius:10px;background:var(--sf)}
 details.learn summary{min-height:44px;display:flex;align-items:center;gap:8px;padding:0 12px;font-weight:600;color:var(--ac);cursor:pointer;list-style:none}
 details.learn summary::-webkit-details-marker{display:none}
@@ -91,12 +103,12 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 <footer id="foot"></footer>
 </main>
 <nav class="tabs" role="tablist" aria-label="Secciones">
-<button role="tab" data-t="inicio">Hoy</button><button role="tab" data-t="dias">Días</button><button role="tab" data-t="comer">Comer</button><button role="tab" data-t="reservas">Reservas</button><button role="tab" data-t="info">Info</button>
+<button role="tab" data-t="inicio"><span class="ic">🏠</span><span class="pill">Hoy</span></button><button role="tab" data-t="dias"><span class="ic">🗓️</span><span class="pill">Días</span></button><button role="tab" data-t="comer"><span class="ic">🍽️</span><span class="pill">Comer</span></button><button role="tab" data-t="reservas"><span class="ic">🎫</span><span class="pill">Reservas</span></button><button role="tab" data-t="info"><span class="ic">ℹ️</span><span class="pill">Info</span></button>
 </nav>
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',tz:'Europe/Madrid',ver:'1.6',built:'2026-10-25',log:'v1.6 (25-oct-2026): plantilla v3.1: hora azul calculada, tema manual, auditoría, iconos PNG y correcciones de horario.'},
+meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.7',built:'2026-10-25',log:'v1.7 (25-oct-2026): motor 3.2.0 (aspecto nuevo: iconos, degradados, tarjetas) y glifo 🫒.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
@@ -111,33 +123,33 @@ days:[
 {id:'vie',date:'2026-11-20',base:'parador',title:'Viernes 20',note:'Viaje y llegada tranquila.',tiempo:['jaen'],
 lens:'Sigma 18-50 f/2.8 (noche). RF 18-150 y RF 100-400: no hacen falta hoy.',planB:'Si llegas después de las 22:00, avisa al Parador para asegurar la cena.',
 items:[
-{t:'Tarde',what:'Madrid → Jaén',km:335,place:'charger',note:'≈3 h 15 min sin contar la carga (tu estimación). Standard Range: para a cargar donde te indique el coche (navegación de Tesla).'},
+{t:'Tarde',what:'Madrid → Jaén',k:'🚗',km:335,place:'charger',note:'≈3 h 15 min sin contar la carga (tu estimación). Standard Range: para a cargar donde te indique el coche (navegación de Tesla).'},
 {t:'~21:00',what:'Llegada y check-in en el Parador de Jaén',in:1,place:'parador',learn:'castillo',todo:'cargador',note:'Conecta el coche al cargador del Parador o carga en el Supercharger de Jaén Plaza.'},
 {t:'Cena',what:'Cena en el Parador o en taxi al centro',meal:'cena',opts:['parador','gorrion','manchega','mangas'],res:'Pendiente',todo:'cena-vie',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan).'}]},
 {id:'sab',date:'2026-11-21',base:'ubeda',title:'Sábado 21',note:'Aceite, Baeza y Úbeda. ≈120 km en el día.',tiempo:['baeza','ubeda','jaen'],
 lens:'Almazara: Sigma 18-50 f/2.8 (interior). Baeza y Úbeda de día: RF 18-150. Miradores y hora azul: Sigma 18-50 f/2.8. RF 100-400 solo si quieres comprimir el olivar desde el mirador.',planB:'Si llueve: acorta Baeza (Pópulo y Santa María) y haz Úbeda por dentro (Sacra Capilla y Palacio de las Cadenas).',
 items:[
-{t:'08:30',what:'Salida del Parador',km:42,note:'≈40 min; llegada hacia las 9:10, con margen para la visita de las 9:45.'},
-{t:'09:45',what:'Oleícola San Francisco (Begíjar)',star:1,place:'oleicola',learn:'olivar',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
-{t:'12:55',what:'Begíjar → Baeza',km:7,note:'≈10 min.'},
-{t:'13:00',what:'Baeza con luz',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
+{t:'08:30',what:'Salida del Parador',k:'🚗',km:42,note:'≈40 min; llegada hacia las 9:10, con margen para la visita de las 9:45.'},
+{t:'09:45',what:'Oleícola San Francisco (Begíjar)',k:'🫒',star:1,place:'oleicola',learn:'olivar',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
+{t:'12:55',what:'Begíjar → Baeza',k:'🚗',km:7,note:'≈10 min.'},
+{t:'13:00',what:'Baeza con luz',k:'🏛️',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
 {t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],res:'Pendiente',todo:'com-baeza'},
-{t:'15:30',what:'Baeza → Úbeda',km:10},
+{t:'15:30',what:'Baeza → Úbeda',k:'🚗',km:10},
 {t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
 {t:'17:30',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,blue:'mirador',place:'mirador',learn:'olivar',note:'Puesta {set}. Quédate hasta {b2}.'},
 {t:'18:45',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa'],note:'Después de la hora azul, que termina hacia las {b2}.'},
 {t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],res:'Pendiente',todo:'cena-sab'},
-{t:'Al final',what:'Vuelta al Parador',km:60,place:'parador',note:'≈50 min. Si no cenas en Úbeda, sal tras el tapeo (~19:30). Con cena, será de noche cerrada. Deja el coche cargando.'}]},
+{t:'Al final',what:'Vuelta al Parador',k:'🚗',km:60,place:'parador',note:'≈50 min. Si no cenas en Úbeda, sal tras el tapeo (~19:30). Con cena, será de noche cerrada. Deja el coche cargando.'}]},
 {id:'dom',date:'2026-11-22',base:'parador',title:'Domingo 22',note:'Jaén sin coche por la mañana y vuelta a Madrid.',tiempo:['jaen'],
 lens:'Baños Árabes (poca luz): Sigma 18-50 f/2.8. Exteriores de Jaén: RF 18-150. RF 100-400: no necesario.',planB:'Si la visita no entra en la Catedral, prioriza los Baños Árabes (abren el domingo hasta las 14:45).',
 items:[
-{t:'09:30',what:'Desayuno en el Parador'},
+{t:'09:30',what:'Desayuno en el Parador',k:'☕'},
 {t:'10:00',what:'Check-out y maletas en consigna',out:1,place:'parador',todo:'checkout',note:'Confirma con el Parador la hora de salida y la consigna.'},
 {t:'10:10',what:'Taxi al punto de encuentro',dur:10,note:'Unos 10 min desde el Parador.'},
 {t:'10:30',what:'Visita guiada Civitatis: Catedral, Búnker y Baños Árabes',star:1,place:'banos',learn:'banos',learn2:'catedral',todo:'civitatis',note:'Reservada de 10:30 a ~13:00. Baños Árabes: domingo 9:15-14:45 (último pase 14:15).'},
 {t:'13:00',what:'Comida en Jaén',meal:'comida',opts:['antonio','mangas'],res:'Pendiente',todo:'com-dom'},
 {t:'14:30',what:'Taxi al Parador, recoger maletas y cargar',place:'parador',note:'Alternativa de carga: Supercharger Jaén Plaza (24 h).'},
-{t:'~15:00',what:'Jaén → Madrid',km:335,place:'charger',note:'Llegada ≈18:30-19:00 más las paradas de carga que indique el coche. Puesta {set}: el último tramo es de noche.'}]}
+{t:'~15:00',what:'Jaén → Madrid',k:'🚗',km:335,place:'charger',note:'Llegada ≈18:30-19:00 más las paradas de carga que indique el coche. Puesta {set}: el último tramo es de noche.'}]}
 ],
 alerts:[
 {day:'dom',lvl:'atencion',msg:'La visita podría no entrar en la Catedral el domingo por la mañana (misa): lo indica un listado del mismo recorrido. Confirma con Civitatis.',src:'centraldereservas.com',verified:'2026-10-25',until:'2026-11-22'},
@@ -195,9 +207,9 @@ links:[
 sos:[{n:'Emergencias',tel:'112'},{n:'Tesla asistencia',tel:'+34911982624'}]
 };
 
-/* ═══ MOTOR v3.1 (ajustes de Jaén marcados con «AJUSTE JAÉN»; no tocar el resto) ═══ */
+/* ═══ MOTOR v3.2 (ajustes de Jaén marcados «AJUSTE JAÉN») ═══ */
 (function(){
-const TPL='3.1';
+const TPL='3.2.0';
 const T=TRIP,M=T.meta,MOD=T.modules||{},TZ=M.tz||'Europe/Madrid',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 T.alerts=T.alerts||[];T.todos=T.todos||[];T.bookings=T.bookings||[];T.links=T.links||[];T.sos=T.sos||[];T.learn=T.learn||{};T.tiempo=T.tiempo||{};
 const ls={g(k){try{return localStorage.getItem(M.slug+':'+k)}catch(e){return null}},s(k,v){try{localStorage.setItem(M.slug+':'+k,v)}catch(e){}}};
@@ -223,6 +235,9 @@ p=sunAlt(n0,la,lo);for(let i=1;i<=720;i++){const t=n0-i*6e4,a=sunAlt(t,la,lo);if
 const SUN={};
 function sun(date,id){const k=date+'|'+id;if(k in SUN)return SUN[k];const p=id&&PL(id);let r=null;if(p&&p.lat!=null){const e=sunEv(date,p.lat,p.lng);if(e.set&&e.b1&&e.b2)r={rise:e.rise?hm(e.rise):'—',set:hm(e.set),b1:hm(e.b1),b2:hm(e.b2),lugar:p.city||p.n}}return SUN[k]=r}
 const tk=(s,date,id)=>{const u=sun(date,id);return u?String(s).replace(/\{(rise|set|b1|b2)\}/g,(m,k)=>u[k]):s};
+const sunB=u=>u?'<div class="sun"><div><small>🌅 Amanecer</small><b>'+u.rise+'</b></div><div><small>🌇 Puesta</small><b>'+u.set+'</b></div><div><small>🔵 Hora azul</small><b>'+u.b1+'–'+u.b2+'</b></div><em>'+u.lugar+'</em></div>':'';
+const G=d=>M.glifo||d;
+const ico=i=>i.k?i.k:i.in?'🏨':i.out?'🧳':i.meal?(i.meal==='cena'?'🍷':'🍽️'):i.blue?'📸':/vuelo|aterriza|despega|\bIB\d|\bVY\d/i.test(i.what)?'✈️':/\bTER\b|tren|autob|bus\b|navette|tranv|tram|metro|taxi|coche|caminar|a pie/i.test(i.what)?'🚆':i.act?'🎈':i.star?'⭐':'📍';
 const sunH=u=>u?'☀ Puesta <b>'+u.set+'</b> · Hora azul <b>'+u.b1+'–'+u.b2+'</b> · Amanecer '+u.rise+' ('+u.lugar+')':'';
 /* ── Estado ── */
 const done=id=>ls.g('t:'+id)==='1';
@@ -243,13 +258,13 @@ let h='<h1>'+M.title+'</h1><p class="mu">'+M.sub+'</p>';
 const okb=T.bookings.filter(b=>b.st==='ok').length;
 const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+open.length+' pendientes</span></div>';
 const day=T.days.find(d=>d.date===n.d);
-if(c>0){h+='<div class="hero"><b>'+c+'</b>días para el viaje'+stats+'</div>'+(Object.keys(T.tiempo).length?'<div class="card"><h3>Tiempo</h3><p class="mu">Consulta la previsión unos días antes de salir.</p>'+tq(Object.keys(T.tiempo))+'</div>':'')+act(n.d).filter(a=>a.lvl!=='info').map(al).join('')+'<h2>Pendientes por fecha límite</h2>'+(open.length?open.map(t=>chk(t,diff(n.d,t.due))).join(''):'<p class="mu">Todo hecho.</p>')}
+if(c>0){h+='<div class="hero" data-g="'+G('🧳')+'"><b>'+c+'</b>días para el viaje'+stats+'</div>'+(Object.keys(T.tiempo).length?'<div class="card"><h3>Tiempo</h3><p class="mu">Consulta la previsión unos días antes de salir.</p>'+tq(Object.keys(T.tiempo))+'</div>':'')+act(n.d).filter(a=>a.lvl!=='info').map(al).join('')+'<h2>Pendientes por fecha límite</h2>'+(open.length?open.map(t=>chk(t,diff(n.d,t.due))).join(''):'<p class="mu">Todo hecho.</p>')}
 else if(day){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(itemT(day,i));return m&&m[1]>=n.t});const ce=day.items.find(i=>i.meal==='cena'),ho=hotelOn(n.d),u=sun(day.date,day.base);
-h+='<div class="hero"><b>'+day.title+'</b>'+day.note+stats+'</div>'+(u?'<div class="card"><p class="mu">'+sunH(u)+'</p></div>':'');
-h+='<div class="card"><h3>Siguiente paso</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':'')+(nx.place?'<div class="row">'+lnk(PL(nx.place))+'</div>':''):'<p>Día completado.</p>')+'</div>';
-if(ce||ho)h+='<div class="card"><h3>Esta noche</h3>'+(ce?'<p><b>'+ce.what+'</b>'+(ce.res?' · Reserva: '+(done(ce.todo)?'hecha':ce.res):'')+'</p>':'')+(ho?'<p class="mu">Alojamiento: '+ho.n+'</p>':'')+'</div>';
+h+='<div class="hero" data-g="'+G('☀️')+'"><b>'+day.title+'</b>'+day.note+stats+'</div>'+sunB(u);
+h+='<div class="card k-next"><h3>⏭️ Siguiente paso</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':'')+(nx.place?'<div class="row">'+lnk(PL(nx.place))+'</div>':''):'<p>Día completado.</p>')+'</div>';
+if(ce||ho)h+='<div class="card k-night"><h3>🌙 Esta noche</h3>'+(ce?'<p><b>'+ce.what+'</b>'+(ce.res?' · Reserva: '+(done(ce.todo)?'hecha':ce.res):'')+'</p>':'')+(ho?'<p class="mu">Alojamiento: '+ho.n+'</p>':'')+'</div>';
 h+='<div class="card" id="wx"><h3>Tiempo</h3><p class="mu">Cargando…</p></div>'+(day.tiempo&&day.tiempo.length?'<div class="card"><h3>Previsión oficial</h3>'+tq(day.tiempo)+'</div>':'')+act(n.d).filter(a=>a.day===day.id).map(al).join('')}
-else h+='<div class="hero"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
+else h+='<div class="hero" data-g="'+G('🎉')+'"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
 el.innerHTML=h;toggles(el);if(day&&c<=0)wx(day)}
 async function wx(day){const box=$('#wx'),p=PL(day.base);if(!box||!p)return;let o=null;
 try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+p.lat+'&longitude='+p.lng+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone='+encodeURIComponent(TZ)+'&forecast_days=7');o=await r.json();o.ts=new Date().toISOString();ls.s('wx',JSON.stringify(o))}catch(e){try{o=JSON.parse(ls.g('wx'))}catch(x){}}
@@ -258,16 +273,16 @@ const i=o.daily.time.indexOf(day.date);box.innerHTML='<h3>Tiempo</h3>'+(i<0?'<p 
 /* ── Días ── */
 function itemT(d,i){if(i.t)return i.t;const u=i.blue&&sun(d.date,i.blue);return u?u.b1:'—'}
 function dias(){const n=now();let h='<h1>Días</h1><div class="chips daynav">'+T.days.map(d=>'<a class="btn" href="#d-'+d.id+'">'+d.title+'</a>').join('')+'</div>';
-T.days.forEach(d=>{const u=sun(d.date,d.base);h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p><div class="card">'+(u?'<p class="mu">'+sunH(u)+'</p>':'')+'<p class="mu">📷 '+d.lens+'</p>'+(d.photo?'<p class="mu">'+d.photo+'</p>':'')+(d.tiempo&&d.tiempo.length?tq(d.tiempo):'')+'</div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
-h+='<ol class="tl">'+d.items.map(i=>{const sid=i.blue||d.base;let x='<li class="'+(i.star?'star':'')+'"><span class="t">'+itemT(d,i)+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'')+(i.dur?' <span class="chip">'+i.dur+' min</span>':'');
+T.days.forEach(d=>{const u=sun(d.date,d.base);h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p>'+sunB(u)+'<div class="card"><p class="mu">📷 '+d.lens+'</p>'+(d.photo?'<p class="mu">'+d.photo+'</p>':'')+(d.tiempo&&d.tiempo.length?tq(d.tiempo):'')+'</div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
+h+='<ol class="tl">'+d.items.map(i=>{const sid=i.blue||d.base;let x='<li class="'+(i.star?'star':'')+'" data-i="'+ico(i)+'"><div class="it"><span class="t">'+itemT(d,i)+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'')+(i.dur?' <span class="chip">'+i.dur+' min</span>':'');
 if(i.note)x+='<p class="mu">'+tk(i.note,d.date,sid)+'</p>';
 if(i.blue){const b=sun(d.date,i.blue);if(b)x+='<p class="mu">'+sunH(b)+'</p>'}
 if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n+rk(r)}).join(' · ')+'</p>';
-/* AJUSTE JAÉN: solo reservas llevan etiqueta; el resto de pendientes vive en Hoy e Info */
+/* AJUSTE JAÉN: solo las reservas llevan etiqueta; el resto de pendientes vive en Hoy e Info */
 if(i.todo&&i.res){const dn=done(i.todo);x+='<p><span class="chip '+(dn?'c-ok':'c-warn')+'">Reserva: '+(dn?'hecha':i.res)+'</span></p>'}
 if(i.place)x+='<div class="row">'+lnk(PL(i.place))+'</div>';
 [i.learn,i.learn2].filter(Boolean).forEach(k=>{const L=T.learn[k];x+='<details class="learn"><summary>Saber más · '+L.t+'</summary><div class="lb"><p>'+L.sum+'</p><ul>'+L.cur.map(c=>'<li>'+c+'</li>').join('')+'</ul><small>Fuente: <a href="'+L.url+'" target="_blank" rel="noopener">'+L.src+'</a> · verificado '+L.ver+'</small></div></details>'});
-return x+'</li>'}).join('')+'</ol>';
+return x+'</div></li>'}).join('')+'</ol>';
 if(d.last)h+='<div class="card"><b>'+d.last.x+':</b> '+(d.last.t?d.last.t+' <span class="mu">(verificado '+d.last.v+')</span>':'<span class="chip c-warn">por verificar</span>')+'</div>';
 h+='<div class="card"><b>Plan B:</b> '+d.planB+'</div>'});
 if(MOD.actividades&&(T.actividades||[]).length){h+='<h2>Planes divertidos y curiosos</h2><p class="mu">Elige 1–2; los elegidos entran en el horario del día.</p>'+T.actividades.map(a=>'<div class="card"><b>'+a.n+'</b> <span class="chip '+(a.estado==='elegida'?'c-ok':'')+'">'+(a.estado||'propuesta')+'</span><p>'+a.why+'</p><p class="mu">Coste: '+a.coste+' · Tiempo: '+a.tiempo+' · Reserva: '+a.reserva+' · Dificultad: '+a.dificultad+'</p><small class="mu">Fuente: <a href="'+a.url+'" target="_blank" rel="noopener">'+a.src+'</a> · verificado '+a.ver+'</small></div>').join('')}
@@ -278,7 +293,6 @@ function comer(){const F=T.food||{},D=T.diet,cs=['todos'].concat([...new Set((F.
 if(MOD.dieta&&D){h+='<h2>Enséñasela al camarero</h2><div class="wait" lang="'+D.lang+'">'+D.tarjeta.loc+'<small>'+D.tarjeta.es+'</small></div><h3>Frases</h3>'+D.frases.map(f=>'<div class="card"><b lang="'+D.lang+'">'+f.loc+'</b><p class="mu">'+f.es+'</p></div>').join('')+'<h3>Evitar</h3><ul class="l">'+D.evitar.map(x=>'<li>'+x+'</li>').join('')+'</ul><h3>Seguro</h3><ul class="l">'+D.seguro.map(x=>'<li>'+x+'</li>').join('')+'</ul><p class="mu">Alergia al trigo; la contaminación cruzada no es problema. '+(D.nota||'')+'</p>'}
 h+='<h2>Platos típicos</h2><p class="mu">Lo más habitual de la zona. Verificado '+F.ver+'.</p>'+(F.tipicos||[]).map(p=>'<div class="card"><b>'+p.n+'</b>'+(MOD.dieta&&p.dieta?' <span class="chip '+RK[p.dieta]+'">'+p.dieta[0].toUpperCase()+p.dieta.slice(1)+'</span>':'')+'<p>'+p.d+'</p><small class="mu">Fuente: <a href="'+p.url+'" target="_blank" rel="noopener">'+p.src+'</a></small></div>').join('');
 h+='<h2>Restaurantes</h2><p class="mu">'+(MOD.dieta?'Etiqueta y fecha de verificación en cada ficha; lo no verificado, confírmalo por teléfono.':'Horarios y menús sin verificar: llama antes de ir.')+'</p><div class="chips">'+cs.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
-/* AJUSTE JAÉN: sin texto «teléfono pendiente»; el botón Llamar solo aparece si hay teléfono */
 h+=(F.rest||[]).filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip">'+r.d+'</span>'+rk(r)+(r.note?'<p>'+r.note+'</p>':'')+(MOD.dieta?'<p class="mu">Verificado: '+(r.v||'pendiente')+'</p>':'')+'<div class="row">'+A(maps(r),'Mapa')+(r.tel?'<a class="btn" href="tel:'+r.tel+'">Llamar</a>':'')+'</div></div>').join('');
 if(MOD.supermercado&&D&&D.super)h+='<h2>Supermercado</h2><div class="card"><p>'+D.super+'</p></div>';
 const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()})}
@@ -318,8 +332,7 @@ const el=$('#info');el.innerHTML=h;toggles(el)}
 /* ── Pie, tema, arranque ── */
 const R=document.documentElement,eff=()=>R.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 {const t=ls.g('theme');if(t)R.dataset.theme=t}
-function foot(){$('#foot').innerHTML='<p>'+M.title+' · v'+M.ver+' · '+M.built+' · motor '+TPL+'</p><p>'+M.log+'</p><div class="row"><button class="btn" id="upd">Actualizar</button><button class="btn" id="thm">Tema claro/oscuro</button></div>';
-$('#upd').onclick=async()=>{try{const r=await navigator.serviceWorker.getRegistration();if(r)await r.unregister();const k=await caches.keys();await Promise.all(k.filter(x=>x.startsWith(M.slug+'-')).map(x=>caches.delete(x)))}catch(e){}location.reload()};
+function foot(){$('#foot').innerHTML='<p>'+M.title+' · v'+M.ver+' · '+M.built+' · motor '+TPL+'</p><p>'+M.log+'</p><div class="row"><button class="btn" id="thm">Tema claro/oscuro</button></div>';
 $('#thm').onclick=()=>{const n=eff()==='dark'?'light':'dark';R.dataset.theme=n;ls.s('theme',n)}}
 function render(){inicio();dias();comer();reservas();info()}
 function show(){const t=(location.hash||'#inicio').slice(1);const id=['inicio','dias','comer','reservas','info'].includes(t)?t:(t.startsWith('d-')?'dias':'inicio');$$('.sec').forEach(s=>s.classList.toggle('on',s.id===id));$$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));if(t.startsWith('d-')){const e=document.getElementById(t);if(e)e.scrollIntoView()}else window.scrollTo(0,0)}
