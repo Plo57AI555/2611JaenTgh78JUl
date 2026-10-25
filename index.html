@@ -88,7 +88,7 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 </nav>
 <script>
 const TRIP={
-meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.3',built:'2026-10-25',log:'v1.3 (25-oct-2026): enlaces de AEMET por ciudad y carga según Tesla Model 3 Standard Range.'},
+meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.4',built:'2026-10-25',log:'v1.4 (25-oct-2026): sin etiquetas de pendiente duplicadas; la reserva de comidas se marca al tachar el pendiente.'},
 modules:{coche:true,conversores:false,super:true,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
@@ -233,8 +233,7 @@ function dias(){const n=now();let h='<h1>Días</h1><div class="chips daynav">'+T
 T.days.forEach(d=>{h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p><div class="card"><p class="mu">'+sunH(T.sun[d.id])+'</p><p class="mu">📷 '+d.lens+'</p>'+tq(d.tiempo)+'</div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
 h+='<ol class="tl">'+d.items.map(i=>{let x='<li class="'+(i.star?'star':'')+'"><span class="t">'+i.t+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'');
 if(i.note)x+='<p class="mu">'+i.note+'</p>';
-if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n}).join(' · ')+'</p>'+(i.res?'<p><span class="chip c-warn">Reserva: '+i.res+'</span></p>':'');
-if(i.todo){const dn=done(i.todo);x+='<p><span class="chip '+(dn?'c-ok':'c-warn')+'">'+(dn?'✓ hecho':'pendiente')+'</span></p>'}
+if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n}).join(' · ')+'</p>'+(i.res?'<p><span class="chip '+(done(i.todo)?'c-ok':'c-warn')+'">Reserva: '+(done(i.todo)?'hecha':i.res)+'</span></p>':'');
 if(i.place)x+='<div class="row">'+lnk(T.places[i.place])+'</div>';
 [i.learn,i.learn2].filter(Boolean).forEach(k=>{const L=T.learn[k];x+='<details class="learn"><summary>Saber más · '+L.t+'</summary><div class="lb"><p>'+L.sum+'</p><ul>'+L.cur.map(c=>'<li>'+c+'</li>').join('')+'</ul><small>Fuente: <a href="'+L.url+'" target="_blank" rel="noopener">'+L.src+'</a> · verificado '+L.ver+'</small></div></details>'});
 return x+'</li>'}).join('')+'</ol>';
