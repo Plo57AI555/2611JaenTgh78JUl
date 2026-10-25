@@ -31,11 +31,11 @@ a{color:var(--ac)}
 .card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px 16px;margin:12px 0;box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 9%,transparent)}
 .card h3{margin-top:0;display:flex;align-items:center;gap:8px}
 .card.k-next{border-left:6px solid var(--ac)}
-.hero{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 72%,var(--ink)));color:var(--on);border-radius:20px;padding:22px 20px;margin:8px 0 14px;box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 28%,transparent);position:relative;overflow:hidden}
+.hero{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 72%,var(--ink)));color:var(--on);border-radius:20px;padding:12px 16px;margin:8px 0 12px;box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 28%,transparent);position:relative;overflow:hidden}
 .hero:after{content:attr(data-g);position:absolute;right:12px;top:4px;font-size:5rem;line-height:1;opacity:.22;pointer-events:none}
-.hero b{font:700 2.6rem/1 Georgia,serif;display:block}
-.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.stats span{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:999px;padding:4px 12px;font-size:.95rem;font-weight:600}
+.hero .l1{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 10px;padding-right:56px}.hero b{font:700 2rem/1.15 Georgia,serif}.hero .l1 span{font-size:1.05rem;font-weight:600}
+.stats{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.stats span{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:999px;padding:3px 9px;font-size:.9rem;font-weight:600;white-space:nowrap}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);box-shadow:0 -4px 14px color-mix(in srgb,var(--ink) 8%,transparent);padding-bottom:env(safe-area-inset-bottom,0px);z-index:9}
 nav.tabs button{flex:1;min-height:60px;border:0;background:none;color:var(--mu);font:600 .9rem system-ui,sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 nav.tabs .ic{font-size:1.35rem;line-height:1;filter:grayscale(1);opacity:.7}
@@ -125,7 +125,7 @@ details.ideas{border-style:dashed;border-color:var(--ac)}
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.11',built:'2026-10-25',log:'v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.12',built:'2026-10-25',log:'v1.12 (25-oct-2026): Banner de Inicio compacto (número y texto en una línea, cifras en una fila de chips). v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
@@ -305,12 +305,12 @@ function hd(){return '<div class="hd"><div><h1>'+M.title+'</h1><p class="mu">'+s
 function dayCard(d,today){const dt=new Date(d.date+'T12:00:00Z'),wd=dt.toLocaleDateString('es-ES',{timeZone:'UTC',weekday:'short'}).replace('.',''),ic=[...new Set(d.items.map(ico))].slice(0,8).join(' '),kd=d.items.reduce((a,i)=>a+(i.km||0),0),tt=d.title.split(' - ').slice(1).join(' - ')||d.title,hoy=d.date===today,wk=(d.tiempo||[]).find(k=>T.tiempo[k]),wx=wk?'<span class="w" data-wx="'+wk+'|'+d.date+'">'+wicon(wk,d.date)+'</span><span class="tt" data-wxt="'+wk+'|'+d.date+'">'+wtemp(wk,d.date)+'</span>':'';return '<a class="dcard'+(hoy?' hoy':'')+'" href="#d-'+d.id+'"'+(hoy?' aria-current="date"':'')+'><div class="dn"><small>'+wd+'</small><b>'+dt.getUTCDate()+'</b>'+wx+'</div><div><h4>'+tt+'</h4><p class="ic">'+ic+'</p><p class="mu">'+(kd?kd+' km · ':'')+d.note+'</p></div></a>'}
 function inicio(){const n=now(),c=diff(n.d,M.start),el=$('#inicio'),op=openT();
 const okb=T.bookings.filter(b=>b.st==='ok').length;
-const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+op.length+' pendientes</span></div>';
+const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+op.length+' pend.</span></div>';
 const day=T.days.find(d=>d.date===n.d),ended=n.d>M.end;
 let h=hd();
-if(c>0)h+='<div class="hero" data-g="'+G('🧳')+'"><b>'+c+'</b>días para el viaje'+stats+'</div>';
-else if(ended)h+='<div class="hero" data-g="'+G('🎉')+'"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
-else{const k=T.days.findIndex(d=>d.date===n.d)+1;h+='<div class="hero" data-g="'+G('☀️')+'"><b>'+(k?'Día '+k+' de '+T.days.length:'En viaje')+'</b>'+(day?day.title:'')+stats+'</div>'}
+if(c>0)h+='<div class="hero" data-g="'+G('🧳')+'"><div class="l1"><b>'+c+'</b><span>días para el viaje</span></div>'+stats+'</div>';
+else if(ended)h+='<div class="hero" data-g="'+G('🎉')+'"><div class="l1"><b>Fin</b><span>Viaje terminado: convierte esta web en diario y retira los datos personales.</span></div>'+stats+'</div>';
+else{const k=T.days.findIndex(d=>d.date===n.d)+1;h+='<div class="hero" data-g="'+G('☀️')+'"><div class="l1"><b>'+(k?'Día '+k+' de '+T.days.length:'En viaje')+'</b><span>'+(day?day.title:'')+'</span></div>'+stats+'</div>'}
 if(day&&c<=0&&!ended){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(itemT(day,i));return m&&m[1]>=n.t}),ce=day.items.find(i=>i.meal==='cena'),ho=hotelOn(n.d),k0=(day.tiempo||[])[0];
 h+='<div class="card k-next"><h3>⏭️ Ahora</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':''):'<p>Día completado.</p>')+(ce?'<p class="mu">🌙 '+ce.what+(estOf(ce)?' · '+estOf(ce)[0]:'')+'</p>':'')+(ho?'<p class="mu">🏨 '+ho.n+'</p>':'')+(k0?'<p class="mu" data-wxnow="'+k0+'|'+day.date+'">Cargando tiempo…</p>':'')+'</div>'}
 h+='<h2>🧭 Itinerario</h2>'+T.days.map(d=>dayCard(d,n.d)).join('');
