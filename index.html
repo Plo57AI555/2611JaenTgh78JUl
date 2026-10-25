@@ -35,7 +35,7 @@ a{color:var(--ac)}
 .hero:after{content:attr(data-g);position:absolute;right:12px;top:4px;font-size:5rem;line-height:1;opacity:.22;pointer-events:none}
 .hero b{font:700 2.6rem/1 Georgia,serif;display:block}
 .stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.stats span{background:color-mix(in srgb,var(--on) 18%,transparent);border-radius:999px;padding:4px 12px;font-size:.95rem;font-weight:600}
+.stats span{background:color-mix(in srgb,var(--on) 12%,transparent);border-radius:999px;padding:4px 12px;font-size:.95rem;font-weight:600}
 nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);box-shadow:0 -4px 14px color-mix(in srgb,var(--ink) 8%,transparent);padding-bottom:env(safe-area-inset-bottom,0px);z-index:9}
 nav.tabs button{flex:1;min-height:60px;border:0;background:none;color:var(--mu);font:600 .9rem system-ui,sans-serif;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 nav.tabs .ic{font-size:1.35rem;line-height:1;filter:grayscale(1);opacity:.7}
@@ -95,13 +95,17 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 .ibtn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 2px 6px color-mix(in srgb,var(--ink) 8%,transparent)}
 .btn.sm{gap:6px;min-height:36px;padding:0 12px;border-radius:999px;font-size:.9rem;background:color-mix(in srgb,var(--ac) 10%,var(--sf));border-color:color-mix(in srgb,var(--ac) 35%,var(--ln));position:relative}
 .btn.sm:after{content:"";position:absolute;inset:-4px}
-.pd{padding:8px 0;border-bottom:1px solid var(--ln)}
 .est{margin:8px 0 0}
 .idea{padding:10px 0;border-top:1px solid var(--ln)}.idea:first-child{border-top:0;padding-top:2px}
 details.ideas{border-style:dashed;border-color:var(--ac)}
-.itin{list-style:none;padding:0;margin:4px 0}.itin li{margin:8px 0}
 .daynav a[aria-current]{background:color-mix(in srgb,var(--ac) 16%,var(--sf));border-width:2px}
 .alert a{font-weight:600}
+/* AJUSTE JAÉN: Itinerario en tarjetas por día (opción A) */
+.dcard{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:18px;padding:12px 14px;margin:10px 0;box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 9%,transparent)}
+.dcard.hoy{border:2px solid var(--ac)}
+.dcard .dn{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 72%,var(--ink)));color:var(--on);border-radius:14px;text-align:center;padding:8px 0;line-height:1}
+.dcard .dn small{display:block;font-size:.9rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}.dcard .dn b{font:700 1.9rem/1.1 Georgia,serif}
+.dcard h4{margin:0;font:700 1.05rem/1.25 Georgia,serif}.dcard p{margin:4px 0 0}.dcard .ic{font-size:1.15rem;letter-spacing:4px}
 
 </style>
 </head>
@@ -120,7 +124,7 @@ details.ideas{border-style:dashed;border-color:var(--ac)}
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.9',built:'2026-10-25',log:'v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.10',built:'2026-10-25',log:'v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
@@ -227,7 +231,7 @@ sos:[{n:'Emergencias',tel:'112'},{n:'Tesla asistencia',tel:'+34911982624'}]
 
 /* ═══ MOTOR v3.3 (no tocar salvo mejora de plantilla) ═══ */
 (function(){
-const TPL='3.3.0';
+const TPL='3.3.1';
 const T=TRIP,M=T.meta,MOD=T.modules||{},TZ=M.tz||'Europe/Madrid',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 T.alerts=T.alerts||[];T.todos=T.todos||[];T.bookings=T.bookings||[];T.links=T.links||[];T.sos=T.sos||[];T.learn=T.learn||{};T.tiempo=T.tiempo||{};T.actividades=T.actividades||[];
 const ls={g(k){try{return localStorage.getItem(M.slug+':'+k)}catch(e){return null}},s(k,v){try{localStorage.setItem(M.slug+':'+k,v)}catch(e){}}};
@@ -288,13 +292,15 @@ const rk=r=>MOD.dieta&&r.risk?' <span class="chip '+RK[r.risk]+'">'+r.risk[0].to
 const ST={ok:['Reservado','c-ok'],ver:['Ver correo/Wallet','c-warn'],pend:['Pendiente','c-warn'],none:['Sin reserva','']};
 const EST={reservado:['Reservado','c-ok'],pendiente:['Reserva pendiente','c-warn'],flexible:['Flexible','']};
 const todoOf=i=>i.todo&&T.todos.find(t=>t.id===i.todo);
-function estOf(i){if(i.est&&EST[i.est])return EST[i.est];const td=todoOf(i);if(td&&td.hecho)return EST.reservado;if(i.meal||i.res)return EST.pendiente;if(td)return['Pendiente','c-warn'];return null}
+function estOf(i){if(i.est&&EST[i.est])return EST[i.est];if(!(i.meal||i.res))return null;const td=todoOf(i);return td&&td.hecho?EST.reservado:EST.pendiente}
 const VEH={tesla:{n:'Tesla Model 3 Standard (eléctrico)',carga:'imprescindible'},bmw:{n:'BMW X3 (híbrido enchufable)',carga:'opcional'},otro:{n:'Otro vehículo o alquiler',carga:'por confirmar'}};
 const veh=()=>MOD.coche&&T.coche&&VEH[T.coche.vehiculo];
 function cargaChip(b){const v=veh();if(!v||b.tipo!=='Hotel')return '';const c=b.cargador;if(c==='si')return ' <span class="chip c-ok">⚡ Cargador: sí</span>';if(c==='no')return ' <span class="chip '+(T.coche.vehiculo==='tesla'?'c-bad':'')+'">⚡ Sin cargador</span>';return ' <span class="chip '+(T.coche.vehiculo==='tesla'?'c-warn':'')+'">⚡ Cargador: por confirmar'+(T.coche.vehiculo==='bmw'?' (opcional)':'')+'</span>'}
 function hotelOn(d){return T.bookings.find(b=>b.tipo==='Hotel'&&b.in&&b.in<=d&&d<b.out)}
 /* ── Inicio ── */
 function hd(){return '<div class="hd"><div><h1>'+M.title+'</h1><p class="mu">'+sub()+'</p></div><button class="ibtn" id="thm" aria-label="Cambiar entre tema claro y oscuro">'+(eff()==='dark'?'☀️':'🌙')+'</button></div>'}
+/* AJUSTE JAÉN: tarjeta de día (fecha, lugares, iconos de las paradas, km y nota), todo derivado de TRIP */
+function dayCard(d,today){const dt=new Date(d.date+'T12:00:00Z'),wd=dt.toLocaleDateString('es-ES',{timeZone:'UTC',weekday:'short'}).replace('.',''),ic=[...new Set(d.items.map(ico))].slice(0,8).join(' '),kd=d.items.reduce((a,i)=>a+(i.km||0),0),tt=d.title.split(' - ').slice(1).join(' - ')||d.title,hoy=d.date===today;return '<a class="dcard'+(hoy?' hoy':'')+'" href="#d-'+d.id+'"'+(hoy?' aria-current="date"':'')+'><div class="dn"><small>'+wd+'</small><b>'+dt.getUTCDate()+'</b></div><div><h4>'+tt+'</h4><p class="ic">'+ic+'</p><p class="mu">'+(kd?kd+' km · ':'')+d.note+'</p></div></a>'}
 function inicio(){const n=now(),c=diff(n.d,M.start),el=$('#inicio'),op=openT();
 const okb=T.bookings.filter(b=>b.st==='ok').length;
 const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+op.length+' pendientes</span></div>';
@@ -305,7 +311,7 @@ else if(ended)h+='<div class="hero" data-g="'+G('🎉')+'"><b>Fin</b>Viaje termi
 else{const k=T.days.findIndex(d=>d.date===n.d)+1;h+='<div class="hero" data-g="'+G('☀️')+'"><b>'+(k?'Día '+k+' de '+T.days.length:'En viaje')+'</b>'+(day?day.title:'')+stats+'</div>'}
 if(day&&c<=0&&!ended){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(itemT(day,i));return m&&m[1]>=n.t}),ce=day.items.find(i=>i.meal==='cena'),ho=hotelOn(n.d),k0=(day.tiempo||[])[0];
 h+='<div class="card k-next"><h3>⏭️ Ahora</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':''):'<p>Día completado.</p>')+(ce?'<p class="mu">🌙 '+ce.what+(estOf(ce)?' · '+estOf(ce)[0]:'')+'</p>':'')+(ho?'<p class="mu">🏨 '+ho.n+'</p>':'')+(k0?'<p class="mu" data-wxnow="'+k0+'|'+day.date+'">Cargando tiempo…</p>':'')+'</div>'}
-h+='<div class="card"><h3>🧭 Itinerario</h3><ul class="l itin">'+T.days.map(d=>'<li><a href="#d-'+d.id+'"'+(d.date===n.d?' aria-current="date"':'')+'>'+d.title+'</a></li>').join('')+'</ul></div>';
+h+='<h2>🧭 Itinerario</h2>'+T.days.map(d=>dayCard(d,n.d)).join('');
 const tk0=Object.keys(T.tiempo);if(tk0.length){const ref=(c>0?M.start:day?day.date:M.start);h+='<div class="card"><h3>Tiempo</h3>'+tq(tk0,ref)+'</div>'}
 const al0=act(n.d).filter(a=>a.lvl!=='info');if(al0.length)h+='<h2>Atención</h2>'+al0.map(al).join('');
 h+='<h2>Pendientes</h2>'+(op.length?op.map(t=>pend(t,diff(n.d,t.due))).join(''):'<p class="mu">Nada pendiente.</p>');
@@ -338,7 +344,7 @@ h+=(F.rest||[]).filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b
 if(MOD.supermercado&&D&&D.super)h+='<h2>Supermercado</h2><div class="card"><p>'+D.super+'</p></div>';
 const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()})}
 /* ── Reservas (único sitio con mapa, llamar y horarios) ── */
-function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>{const s=ST[b.st],p=b.place&&PL(b.place);return '<div class="card"><b>'+b.n+'</b> <span class="chip '+s[1]+'">'+s[0]+'</span>'+cargaChip(b)+'<p class="mu">'+b.tipo+' · '+b.when+'</p>'+(b.dir?'<p>'+b.dir+'</p>':'')+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+(b.tipo==='Hotel'&&!(p&&p.tel)?' · teléfono pendiente':'')+'</p>'+(p?lnk(p):'')+'</div>'}).join('');
+function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>{const s=ST[b.st],p=b.place&&PL(b.place);return '<div class="card"><b>'+b.n+'</b> <span class="chip '+s[1]+'">'+s[0]+'</span>'+cargaChip(b)+'<p class="mu">'+b.tipo+' · '+b.when+'</p>'+(b.dir?'<p>'+b.dir+'</p>':'')+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+'</p>'+(p?lnk(p):'')+'</div>'}).join('');
 const v=veh();if(v)h+='<h2>Coche</h2><div class="card"><b>'+v.n+'</b> <span class="chip '+(T.coche.vehiculo==='tesla'?'c-warn':'')+'">⚡ Carga: '+v.carga+'</span><p>'+T.coche.txt+'</p>'+(T.coche.place&&PL(T.coche.place)?lnk(PL(T.coche.place)):'')+'</div>';
 else if(MOD.coche&&T.coche)h+='<h2>Coche</h2><div class="card"><b>'+T.coche.n+'</b><p>'+T.coche.txt+'</p>'+(T.coche.place&&PL(T.coche.place)?lnk(PL(T.coche.place)):'')+'</div>';
 h+='<p class="mu">Localizadores y datos personales: en tu correo o Wallet (esta web es pública).</p>';$('#reservas').innerHTML=h}
@@ -361,7 +367,7 @@ const tx=(i.what||'')+' '+(i.note||'');if(lead.test(tx))o.push(d.title+': hora a
 if(/\{(rise|set|b1|b2)\}/.test(tx)&&!sun(d.date,i.blue||d.base))o.push(d.title+': hora azul sin coordenadas en «'+i.what+'»')});
 if(d.last&&!d.last.t)o.push(d.title+': último transporte sin verificar');
 if(d.last&&d.last.t){const u=sun(d.date,d.base);if(u&&u.b2>d.last.t)o.push(d.title+': el último transporte ('+d.last.t+') sale antes del fin de la hora azul ('+u.b2+'): revisa')}});
-T.todos.forEach(t=>{if(!t.due)o.push('Pendiente sin fecha límite: '+t.id);if(t.day&&!t.hecho){const d=D.find(x=>x.id===t.day);if(!d||!d.items.some(i=>i.todo===t.id))o.push('Pendiente que no está en el horario: '+t.id)}});
+T.todos.forEach(t=>{if(!t.due)o.push('Pendiente sin fecha límite: '+t.id);if(!t.day&&!t.hecho&&t.due>=M.start&&!D.some(d=>d.items.some(i=>i.todo===t.id)))o.push('Pendiente sin día que no está en el horario: '+t.id);if(t.day&&!t.hecho){const d=D.find(x=>x.id===t.day);if(!d||!d.items.some(i=>i.todo===t.id))o.push('Pendiente que no está en el horario: '+t.id)}});
 T.alerts.forEach(a=>{if(lead.test(a.msg))o.push('Aviso con hora azul/puesta escrita a mano: '+a.msg.slice(0,40)+'…');if(!a.until)o.push('Aviso sin fecha de fin: '+a.msg.slice(0,40)+'…');if(!a.verified)o.push('Aviso sin verificar: '+a.msg.slice(0,48)+'…')});
 if(MOD.coche&&T.coche&&!VEH[T.coche.vehiculo])o.push('Coche: falta coche.vehiculo (tesla, bmw u otro)');
 T.bookings.filter(b=>b.tipo==='Hotel'&&b.in).forEach(b=>{if(b.st!=='ok'&&b.st!=='ver')o.push('Hotel sin confirmar: '+b.n);if(/no verificado|por verificar/i.test(b.check||''))o.push('Check-in/out sin verificar: '+b.n);
