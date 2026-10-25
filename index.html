@@ -121,7 +121,7 @@ details.ideas{border-style:dashed;border-color:var(--ac)}
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.14',built:'2026-10-25',log:'v1.14 (25-oct-2026): Motor 3.3.5 de la plantilla (sin el desplegable de previsión en Inicio). v1.13 (25-oct-2026): Motor 3.3.4 de la plantilla (sustituye los ajustes propios de Jaén); retirado el aviso de la misa de la Catedral (confirmado). v1.12 (25-oct-2026): Banner de Inicio compacto (número y texto en una línea, cifras en una fila de chips). v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.15',built:'2026-10-25',log:'v1.15 (25-oct-2026): Retirado el aviso de la Sacra Capilla (horario oficial 9:30-19:00 confirmado). v1.14 (25-oct-2026): Motor 3.3.5 de la plantilla (sin el desplegable de previsión en Inicio). v1.13 (25-oct-2026): Motor 3.3.4 de la plantilla (sustituye los ajustes propios de Jaén); retirado el aviso de la misa de la Catedral (confirmado). v1.12 (25-oct-2026): Banner de Inicio compacto (número y texto en una línea, cifras en una fila de chips). v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
@@ -148,7 +148,7 @@ items:[
 {t:'13:00',what:'Baeza con luz',k:'🏛️',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
 {t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],est:'pendiente',todo:'com-baeza'},
 {t:'15:30',what:'Baeza → Úbeda',k:'🚗',km:10},
-{t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
+{t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; abierta de 9:30 a 19:00, viernes y sábado), Palacio de las Cadenas y Calle Real.'},
 {t:'17:30',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,blue:'mirador',place:'mirador',learn:'olivar',note:'Puesta {set}. Quédate hasta {b2}.'},
 {t:'18:45',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa'],est:'pendiente',note:'Después de la hora azul, que termina hacia las {b2}.'},
 {t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],est:'pendiente',todo:'cena-sab'},
@@ -164,7 +164,6 @@ items:[
 {t:'~15:00',what:'Jaén → Madrid',k:'🚗',km:335,place:'charger',note:'Llegada ≈18:30-19:00 más las paradas de carga que indique el coche. Puesta {set}: el último tramo es de noche.'}]}
 ],
 alerts:[
-{day:'sab',lvl:'atencion',msg:'Horario de la [Sacra Capilla](https://www.expedia.com/things-to-do/ubeda-holy-chapel-of-the-savior-entry-ticket.a47879543.activity-details) sin verificar en fuente oficial. Tu plan decía 9:30-19:00; un listado de entradas muestra 10:00-18:30 (viernes).',src:'Expedia',url:'https://www.expedia.com/things-to-do/ubeda-holy-chapel-of-the-savior-entry-ticket.a47879543.activity-details',verified:'2026-10-25',until:'2026-11-21'},
 {day:'sab',lvl:'info',msg:'Puesta {set} en Úbeda y hora azul {b1}–{b2}. La vuelta a Jaén es de noche (~50 min).',src:'cálculo por coordenadas y fecha',verified:'2026-10-25',until:'2026-11-21'},
 {day:'vie',lvl:'info',msg:'Llegada ~21:00: la subida al Parador no es para hacerla a pie.',src:'tu plan',verified:'2026-10-25',until:'2026-11-20'}],
 bookings:[
