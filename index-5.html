@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#4F6224">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jaén 2611">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Jaén · 20-22 nov 2026</title>
+<style>
+:root{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#8A6A00;--wn:#8A4B12;--cr:#9B1C1C;--ok:#2F6B2F}
+@media (prefers-color-scheme:dark){:root{--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#E0B93F;--wn:#E6A15F;--cr:#FF8A8A;--ok:#8FD18F}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+main{max-width:720px;margin:0 auto;padding:calc(16px + env(safe-area-inset-top,0px)) 16px 24px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;margin:0 0 6px;line-height:1.15}
+h1{font-size:2rem}h2{font-size:1.5rem;margin-top:22px}h3{font-size:1.1rem;margin-top:18px}
+p{margin:4px 0}
+.mu{color:var(--mu);font-size:.95rem}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:14px;margin:10px 0}
+.hero{background:var(--ac);color:var(--on);border-radius:14px;padding:18px;margin:6px 0 12px}
+.hero b{font:700 2.6rem/1 Georgia,serif;display:block}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.stats span{border:1px solid currentColor;border-radius:999px;padding:4px 12px;font-size:.95rem}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--sf);border-top:1px solid var(--ln);padding-bottom:env(safe-area-inset-bottom,0px);z-index:9}
+nav.tabs button{flex:1;min-height:56px;border:0;background:none;color:var(--mu);font:600 .9rem system-ui,sans-serif;cursor:pointer}
+nav.tabs button[aria-selected=true]{color:var(--ac);box-shadow:inset 0 3px 0 var(--ac)}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--oil);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border:1px solid var(--ac);border-radius:10px;background:none;color:var(--ac);font:600 .95rem system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.btn.fill{background:var(--ac);color:var(--on)}
+.btn[aria-pressed=true]{background:var(--ac);color:var(--on)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.chip{display:inline-block;border:1px solid var(--ln);border-radius:999px;padding:2px 10px;font-size:.9rem;font-weight:600}
+.c-ok{color:var(--ok);border-color:var(--ok)}.c-warn{color:var(--wn);border-color:var(--wn)}.c-bad{color:var(--cr);border-color:var(--cr)}
+.alert{border-left:5px solid var(--ln);padding:8px 12px;margin:8px 0;background:var(--sf);border-radius:0 10px 10px 0}
+.alert.atencion{border-color:var(--wn)}.alert.critico{border-color:var(--cr)}.alert.info{border-color:var(--ac)}
+.alert small{display:block;color:var(--mu);font-size:.9rem}
+ol.tl{list-style:none;margin:0;padding:0 0 0 4px;border-left:2px solid var(--ln)}
+ol.tl li{position:relative;padding:0 0 16px 18px}
+ol.tl li:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
+ol.tl li.star:before{background:var(--oil);border-color:var(--oil)}
+.t{font-weight:700;color:var(--ac);font-variant-numeric:tabular-nums}
+.what{font-weight:600}
+.opt{color:var(--mu);font-weight:400}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0}
+.chips .btn{white-space:nowrap}
+.big{font:700 1.7rem/1.25 Georgia,serif;margin:6px 0}
+.todo{display:flex;gap:12px;align-items:flex-start;min-height:44px;padding:8px 0;border-bottom:1px solid var(--ln)}
+.todo input{width:24px;height:24px;margin-top:2px;accent-color:var(--ac);flex:none}
+.todo input:checked+span{text-decoration:line-through;color:var(--mu)}
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:8px 6px 8px 0;border-bottom:1px solid var(--ln);vertical-align:top}
+th{color:var(--mu)}
+.sec{display:none}.sec.on{display:block}
+.overlay{position:fixed;inset:0;background:var(--bg);color:var(--ink);z-index:99;padding:24px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.overlay div{font:700 2.2rem/1.2 Georgia,serif;white-space:pre-line}
+footer{margin-top:28px;color:var(--mu);font-size:.9rem}
+</style>
+</head>
+<body>
+<main>
+<section id="inicio" class="sec"></section>
+<section id="dias" class="sec"></section>
+<section id="comer" class="sec"></section>
+<section id="reservas" class="sec"></section>
+<section id="info" class="sec"></section>
+<footer id="foot"></footer>
+</main>
+<nav class="tabs" role="tablist" aria-label="Secciones">
+<button role="tab" data-t="inicio">Hoy</button><button role="tab" data-t="dias">Días</button><button role="tab" data-t="comer">Comer</button><button role="tab" data-t="reservas">Reservas</button><button role="tab" data-t="info">Info</button>
+</nav>
+<script>
+const TRIP={
+meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.0',built:'2026-10-25',log:'v1.0 (25-oct-2026): primera versión con plan, dieta, foto y modo sin conexión.'},
+modules:{coche:true,conversores:false,super:true,fauna:false,astro:false},
+places:{
+parador:{n:'Parador de Jaén',q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
+oleicola:{n:'Oleícola San Francisco',q:'Oleícola San Francisco, Begíjar',tel:'+34953763415'},
+baeza:{n:'Baeza (centro)',q:'Plaza de Santa María, Baeza'},
+ubeda:{n:'Sacra Capilla del Salvador, Úbeda',q:'Sacra Capilla del Salvador, Úbeda'},
+mirador:{n:'Redonda de Miradores, Úbeda',q:'Redonda de Miradores, Úbeda'},
+banos:{n:'Baños Árabes (Palacio de Villardompardo)',q:'Baños Árabes, Plaza de Santa Luisa de Marillac, Jaén',url:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'},
+super:{n:'Tesla Supercharger Jaén Plaza',q:'Tesla Supercharger Jaén Plaza, Paraje de las Lagunillas 1, Jaén',tel:'+34911982624',url:'https://www.tesla.com/findus/location/supercharger/299197'}
+},
+sun:{
+vie:{lugar:'Jaén',rise:'08:00',set:'18:00',blue:['18:18','18:29']},
+sab:{lugar:'Úbeda',rise:'08:00',set:'17:57',blue:['18:15','18:26']},
+dom:{lugar:'Jaén',rise:'08:02',set:'17:59',blue:['18:17','18:28']},
+src:'Calculado por coordenadas y fecha (hora de España, CET). Verificado 25-oct-2026.'},
+days:[
+{id:'vie',date:'2026-11-20',title:'Viernes 20',note:'Viaje y llegada tranquila.',
+lens:'Sigma 18-50 f/2.8 (noche). RF 18-150 y RF 100-400: no hacen falta hoy.',
+planB:'Si llegas después de las 22:00, avisa al Parador para asegurar la cena.',
+more:{t:'Jaén Plaza tiene Supercharger de 12 puestos, hasta 250 kW, abierto 24 h.',src:'tesla.com',url:'https://www.tesla.com/findus/location/supercharger/299197'},
+items:[
+{t:'Tarde',what:'Madrid → Jaén',km:335,note:'≈3 h 15 min sin paradas (tu estimación). Sal con batería al 100 %; si no es Long Range, para a cargar.',place:'super'},
+{t:'~21:00',what:'Llegada al Parador de Jaén',place:'parador',todo:'cargador',note:'Conecta el coche al cargador del Parador o carga en el Supercharger de Jaén Plaza.'},
+{t:'Cena',what:'En el Parador o en taxi al centro',meal:'cena',opts:['parador','gorrion','manchega','mangas'],res:'Pendiente',todo:'cena-vie',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan).'}]},
+{id:'sab',date:'2026-11-21',title:'Sábado 21',note:'Aceite, Baeza y Úbeda. ≈120 km en el día.',
+lens:'Almazara: Sigma 18-50 f/2.8 (interior). Baeza y Úbeda de día: RF 18-150. Miradores y hora azul: Sigma 18-50 f/2.8. RF 100-400 solo si quieres comprimir el olivar desde el mirador.',
+planB:'Si llueve: acorta Baeza (Pópulo y Santa María) y haz Úbeda por dentro (Sacra Capilla y Palacio de las Cadenas).',
+more:{t:'Úbeda y Baeza son Patrimonio Mundial desde 2003.',src:'fascinatingspain.com',url:'https://www.fascinatingspain.com/articulo/monuments-of-spain/holy-chapel-of-el-salvador/20200212111551071144.html'},
+items:[
+{t:'08:30',what:'Salida del Parador',km:42,note:'≈40 min; llegada hacia las 9:25.'},
+{t:'09:45',what:'Oleícola San Francisco (Begíjar)',star:1,place:'oleicola',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
+{t:'12:55',what:'Begíjar → Baeza',km:7,note:'≈10 min.'},
+{t:'13:00',what:'Baeza con luz',place:'baeza',todo:'cat-baeza',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
+{t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],res:'Pendiente',todo:'com-baeza'},
+{t:'15:30',what:'Baeza → Úbeda',km:10},
+{t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',todo:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
+{t:'17:20',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,place:'mirador',note:'Puesta 17:57. Quédate hasta ~18:30 (hora azul 18:15-18:26).'},
+{t:'18:30',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa']},
+{t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],res:'Pendiente',todo:'cena-sab'},
+{t:'Tras cenar o ~19:00',what:'Vuelta al Parador',km:60,place:'parador',note:'≈50 min. Si cenaste en Úbeda, será de noche cerrada. Deja el coche cargando.'}]},
+{id:'dom',date:'2026-11-22',title:'Domingo 22',note:'Jaén sin coche por la mañana y vuelta a Madrid.',
+lens:'Baños Árabes (poca luz): Sigma 18-50 f/2.8. Exteriores de Jaén: RF 18-150. RF 100-400: no necesario.',
+planB:'Si la visita no entra en la Catedral, prioriza los Baños Árabes (abren el domingo hasta las 14:45).',
+more:{t:'Los Baños Árabes (s. XI, 450 m²) son probablemente los mayores visitables de España.',src:'jaenparaisointerior.es',url:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'},
+items:[
+{t:'09:30',what:'Desayuno en el Parador'},
+{t:'10:30',what:'Visita guiada Civitatis: Catedral, Búnker y Baños Árabes',star:1,place:'banos',todo:'civitatis',note:'Reservada hasta ~13:00. Taxi desde el Parador (~10 min). Baños Árabes: domingo 9:15-14:45 (último pase 14:15).'},
+{t:'13:00',what:'Comida en Jaén',meal:'comida',opts:['antonio','mangas'],res:'Pendiente',todo:'com-dom'},
+{t:'14:30',what:'Taxi al Parador, maletas y carga',place:'parador',note:'Alternativa de carga: Supercharger Jaén Plaza (24 h).'},
+{t:'~15:00',what:'Jaén → Madrid',km:335,place:'super',note:'Llegada ≈18:30-19:00 más parada de carga. Puesta 17:59: el último tramo es de noche.'}]}
+],
+alerts:[
+{day:'dom',lvl:'atencion',msg:'La visita podría no entrar en la Catedral el domingo por la mañana (misa): lo indica un listado del mismo recorrido. Confirma con Civitatis.',src:'centraldereservas.com',verified:'2026-10-25',until:'2026-11-22'},
+{day:'sab',lvl:'atencion',msg:'Horario de la Sacra Capilla sin verificar en fuente oficial. Tu plan decía 9:30-19:00; un listado de entradas muestra 10:00-18:30 (viernes).',src:'expedia.com',verified:'2026-10-25',until:'2026-11-21'},
+{day:'sab',lvl:'info',msg:'Puesta 17:57 en Úbeda y hora azul 18:15-18:26. La vuelta a Jaén es de noche (~50 min).',src:'cálculo por coordenadas',verified:'2026-10-25',until:'2026-11-21'},
+{day:'vie',lvl:'info',msg:'Llegada ~21:00: la subida al Parador no es para hacerla a pie.',src:'tu plan',verified:'2026-10-25',until:'2026-11-20'}],
+bookings:[
+{id:'almazara',tipo:'Visita',n:'Oleícola San Francisco',st:'ok',when:'sáb 21 · 9:45-12:45',dir:'C/ Pedro Pérez s/n, Begíjar',cancel:'ver correo',place:'oleicola'},
+{id:'civitatis',tipo:'Visita guiada',n:'Civitatis: Catedral, Búnker y Baños Árabes',st:'ok',when:'dom 22 · 10:30-13:00',dir:'Punto de encuentro: pendiente de confirmar',cancel:'ver Civitatis',place:'banos'},
+{id:'parador',tipo:'Hotel',n:'Parador de Jaén',st:'ver',when:'vie 20 → dom 22',dir:'Castillo de Santa Catalina s/n, Jaén',check:'Check-in/out: ver confirmación (no verificado)',cancel:'ver correo/Wallet',place:'parador'}],
+coche:{n:'Coche propio (Tesla)',txt:'Madrid-Jaén ≈335 km. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.',place:'super'},
+food:{
+phrase:'Tengo alergia al trigo',
+alt:'No puedo comer nada con harina de trigo: pan, rebozados ni empanados.',
+card:'ALERGIA AL TRIGO\nNada con trigo ni harina de trigo: pan, rebozados, empanados, salsas espesadas, sémola.\nLa contaminación cruzada no es problema.\n¿Qué me recomienda sin trigo?',
+evitar:['Pan y migas','Rebozados, empanados y croquetas','Guisos y salsas espesadas con harina','Bollería, pestiños','Salmorejo y ajoblanco (suelen llevar pan)'],
+seguro:['Jamón y queso sin pan','Carne o pescado a la plancha, sin rebozar ni salsa','Huevos; patatas a lo pobre sin harina','Pipirrana, espárragos, ensaladas','Aceite de oliva virgen extra'],
+nota:'Lista general, no verificada por restaurante: pregunta siempre por salsas y fritura.',
+super:['Fruta, verdura, huevos, arroz, legumbres','Jamón y queso envasados (lee la etiqueta)','Aceite de oliva y frutos secos naturales','En etiquetas UE el trigo va resaltado: léelas siempre'],
+rest:[
+{id:'parador',n:'Restaurante del Parador de Jaén',d:'jaen',lab:'Confirmar',q:'Parador de Jaén restaurante'},
+{id:'gorrion',n:'Casa Gorrión',d:'jaen',lab:'Confirmar',q:'Casa Gorrión, Jaén'},
+{id:'manchega',n:'La Manchega',d:'jaen',lab:'Confirmar',q:'La Manchega, Jaén'},
+{id:'mangas',n:'Mangas Verdes',d:'jaen',lab:'Confirmar',q:'Mangas Verdes, Jaén'},
+{id:'antonio',n:'Casa Antonio',d:'jaen',lab:'Confirmar',q:'Casa Antonio, Jaén'},
+{id:'andres',n:'Casa Andrés',d:'baeza',lab:'Confirmar',q:'Casa Andrés, Baeza'},
+{id:'rincon',n:'Rincón Baezano',d:'baeza',lab:'Confirmar',q:'Rincón Baezano, Baeza'},
+{id:'estacion',n:'Cantina La Estación',d:'ubeda',lab:'Confirmar',q:'Cantina La Estación, Úbeda'},
+{id:'cultural',n:'La Cultural',d:'ubeda',lab:'Confirmar',q:'La Cultural, Úbeda'},
+{id:'misa',n:'Misa de 12 (tapas)',d:'ubeda',lab:'Confirmar',q:'Misa de 12, Úbeda'}],
+ver:'sin verificar (menú y alergia al trigo): llama antes'},
+todos:[
+{id:'cargador',t:'Confirmar con el Parador el cargador (cómo pedirlo, conector) o usar el Supercharger',due:'2026-11-13'},
+{id:'cena-vie',t:'Cena del viernes: reservar, avisar de llegada ~21:00 y de la alergia al trigo',due:'2026-11-13'},
+{id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13'},
+{id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:00) y avisar de la alergia al trigo',due:'2026-11-10'},
+{id:'cena-sab',t:'Decidir y reservar cena del sábado: Úbeda o Parador',due:'2026-11-12'},
+{id:'com-dom',t:'Reservar comida del domingo en Jaén (13:00) y avisar de la alergia al trigo',due:'2026-11-12'},
+{id:'cat-baeza',t:'Comprobar si la Catedral de Baeza abre a mediodía el sábado',due:'2026-11-18'},
+{id:'sacra',t:'Comprobar el horario real de la Sacra Capilla del Salvador (sábado)',due:'2026-11-18'}],
+links:[
+{n:'Baños Árabes de Jaén (horarios oficiales)',u:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'},
+{n:'Supercharger Jaén Plaza (Tesla)',u:'https://www.tesla.com/findus/location/supercharger/299197'},
+{n:'Paradores (web oficial)',u:'https://paradores.es'}],
+sos:[{n:'Emergencias',tel:'112'},{n:'Tesla asistencia',tel:'+34911982624'}]
+};
+(function(){
+const T=TRIP,M=T.meta,P=M.slug+':',$=s=>document.querySelector(s);
+const ls={g(k){try{return localStorage.getItem(P+k)}catch(e){return null}},s(k,v){try{localStorage.setItem(P+k,v)}catch(e){}}};
+const q=new URLSearchParams(location.search);
+function now(){if(q.get('d'))return{d:q.get('d'),t:q.get('t')||'12:00'};const s=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date()).split(' ');return{d:s[0],t:s[1]}}
+const diff=(a,b)=>Math.round((Date.parse(b)-Date.parse(a))/864e5);
+const fd=d=>new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{timeZone:'UTC',weekday:'short',day:'numeric',month:'short'});
+const maps=p=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.q);
+const dir=(a,b)=>'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(T.places[a].q)+'&destination='+encodeURIComponent(T.places[b].q);
+const lnk=p=>'<a class="btn" href="'+maps(p)+'" target="_blank" rel="noopener">Mapa</a>'+(p.tel?'<a class="btn" href="tel:'+p.tel+'">Llamar</a>':'')+(p.url?'<a class="btn" href="'+p.url+'" target="_blank" rel="noopener">Horarios</a>':'');
+const rest=id=>T.food.rest.find(r=>r.id===id);
+const done=id=>ls.g('t:'+id)==='1';
+const km=T.days.reduce((s,d)=>s+d.items.reduce((a,i)=>a+(i.km||0),0),0);
+const act=d=>T.alerts.filter(a=>a.until>=d);
+const al=a=>'<div class="alert '+a.lvl+'"><b>'+({info:'Info',atencion:'Atención',critico:'Crítico'})[a.lvl]+':</b> '+a.msg+'<small>Fuente: '+a.src+' · verificado '+a.verified+'</small></div>';
+const sunH=s=>'☀ Puesta <b>'+s.set+'</b> · Hora azul <b>'+s.blue[0]+'-'+s.blue[1]+'</b> · Amanecer '+s.rise+' ('+s.lugar+')';
+const toggles=el=>el.querySelectorAll('input[data-id]').forEach(i=>i.onchange=()=>{ls.s('t:'+i.dataset.id,i.checked?'1':'0');render()});
+function inicio(){const n=now(),c=diff(n.d,M.start),el=$('#inicio');
+const open=T.todos.filter(t=>!done(t.id)).sort((a,b)=>a.due<b.due?-1:1);
+let h='<h1>'+M.title+'</h1><p class="mu">'+M.sub+'</p>';
+const okb=T.bookings.filter(b=>b.st==='ok').length;
+const stats='<div class="stats"><span>'+T.days.length+' días</span><span>'+km+' km</span><span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+open.length+' pendientes</span></div>';
+const day=T.days.find(d=>d.date===n.d);
+if(c>0){h+='<div class="hero"><b>'+c+'</b>días para el viaje'+stats+'</div>'+act(n.d).filter(a=>a.lvl!=='info').map(al).join('')+'<h2>Pendientes por fecha límite</h2>'+(open.length?open.map(t=>{const r=diff(n.d,t.due);return '<label class="todo"><input type="checkbox" data-id="'+t.id+'"><span>'+t.t+'<br><span class="chip '+(r<0?'c-bad':r<=3?'c-warn':'')+'">antes del '+fd(t.due)+(r<0?' · vencido':'')+'</span></span></label>'}).join(''):'<p class="mu">Todo hecho.</p>')}
+else if(day){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(i.t);return m&&m[1]>=n.t});const ce=day.items.find(i=>i.meal==='cena');
+h+='<div class="hero"><b>'+day.title+'</b>'+day.note+stats+'</div><div class="card"><p class="mu">'+sunH(T.sun[day.id])+'</p></div>';
+h+='<div class="card"><h3>Siguiente paso</h3>'+(nx?'<p><span class="t">'+nx.t+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+nx.note+'</p>':'')+(nx.place?'<div class="row">'+lnk(T.places[nx.place])+'</div>':''):'<p>Día completado.</p>')+'</div>';
+if(ce)h+='<div class="card"><h3>Esta noche</h3><p><b>'+ce.what+'</b> · Reserva: '+ce.res+'</p></div>';
+h+='<div class="card" id="wx"><h3>Tiempo</h3><p class="mu">Cargando…</p></div>'+act(n.d).filter(a=>a.day===day.id).map(al).join('')}
+else h+='<div class="hero"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
+el.innerHTML=h;toggles(el);if(day&&c<=0)wx(day)}
+async function wx(day){const box=$('#wx');if(!box)return;let o=null;
+try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+M.lat+'&longitude='+M.lng+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Europe%2FMadrid&forecast_days=7');o=await r.json();o.ts=new Date().toISOString();ls.s('wx',JSON.stringify(o))}catch(e){try{o=JSON.parse(ls.g('wx'))}catch(x){}}
+if(!o||!o.daily){box.innerHTML='<h3>Tiempo</h3><p class="mu">Sin datos (sin red y sin lectura guardada).</p>';return}
+const i=o.daily.time.indexOf(day.date);box.innerHTML='<h3>Tiempo</h3>'+(i<0?'<p class="mu">Sin previsión para hoy en la última lectura.</p>':'<p><b>'+Math.round(o.daily.temperature_2m_min[i])+'° / '+Math.round(o.daily.temperature_2m_max[i])+'°</b> · lluvia '+o.daily.precipitation_probability_max[i]+' %</p>')+'<p class="mu">Última lectura: '+new Date(o.ts).toLocaleString('es-ES',{timeZone:'Europe/Madrid'})+' (Open-Meteo)</p>'}
+function dias(){const n=now();let h='<h1>Días</h1><div class="chips">'+T.days.map(d=>'<a class="btn" href="#d-'+d.id+'">'+d.title+'</a>').join('')+'</div>';
+T.days.forEach(d=>{h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p><div class="card"><p class="mu">'+sunH(T.sun[d.id])+'</p><p class="mu">📷 '+d.lens+'</p></div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
+h+='<ol class="tl">'+d.items.map(i=>{let x='<li class="'+(i.star?'star':'')+'"><span class="t">'+i.t+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'');
+if(i.note)x+='<p class="mu">'+i.note+'</p>';
+if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n+' <span class="chip c-warn">'+r.lab+'</span>'}).join(' · ')+'</p>'+(i.res?'<p><span class="chip c-warn">Reserva: '+i.res+'</span></p>':'');
+if(i.todo){const dn=done(i.todo);x+='<p><span class="chip '+(dn?'c-ok':'c-warn')+'">'+(dn?'✓ hecho':'pendiente')+'</span></p>'}
+if(i.place)x+='<div class="row">'+lnk(T.places[i.place])+'</div>';return x+'</li>'}).join('')+'</ol>';
+h+='<div class="card"><b>Plan B:</b> '+d.planB+'</div><p class="mu">Saber más: '+d.more.t+' <a href="'+d.more.url+'" target="_blank" rel="noopener">'+d.more.src+'</a></p>'});
+$('#dias').innerHTML=h}
+let flt='todos';
+function comer(){const F=T.food,ds=['todos','jaen','baeza','ubeda'];
+let h='<h1>Comer</h1><div class="card"><p class="mu">Enséñasela al camarero</p><p class="big">'+F.phrase+'</p><p>'+F.alt+'</p><div class="row"><button class="btn fill" id="card">Tarjeta grande</button></div></div>';
+h+='<h3>Evitar</h3><ul>'+F.evitar.map(x=>'<li>'+x+'</li>').join('')+'</ul><h3>Suele ser seguro</h3><ul>'+F.seguro.map(x=>'<li>'+x+'</li>').join('')+'</ul><p class="mu">'+F.nota+'</p>';
+h+='<h2>Restaurantes</h2><p class="mu">Verificación: '+F.ver+'.</p><div class="chips">'+ds.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
+h+=F.rest.filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip c-warn">'+r.lab+'</span><p class="mu">Verificado: pendiente</p><div class="row"><a class="btn" href="'+maps(r)+'" target="_blank" rel="noopener">Mapa</a></div></div>').join('');
+h+='<h2>Supermercado</h2><ul>'+F.super.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()});
+$('#card').onclick=()=>{const o=document.createElement('div');o.className='overlay';o.innerHTML='<div>'+F.card+'</div><button class="btn fill">Cerrar</button>';o.querySelector('button').onclick=()=>o.remove();document.body.appendChild(o)}}
+function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>'<div class="card"><b>'+b.n+'</b> <span class="chip '+(b.st==='ok'?'c-ok':'c-warn')+'">'+(b.st==='ok'?'Reservado':'Ver correo/Wallet')+'</span><p class="mu">'+b.tipo+' · '+b.when+'</p><p>'+b.dir+'</p>'+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+'</p><div class="row">'+lnk(T.places[b.place])+'</div></div>').join('');
+if(T.modules.coche)h+='<h2>Coche</h2><div class="card"><b>'+T.coche.n+'</b><p>'+T.coche.txt+'</p><div class="row">'+lnk(T.places[T.coche.place])+'</div></div>';
+h+='<p class="mu">Localizadores y datos personales: en tu correo o Wallet (esta web es pública).</p>';$('#reservas').innerHTML=h}
+function info(){let h='<h1>Info</h1><h2>Pendientes y checklist</h2>'+T.todos.slice().sort((a,b)=>a.due<b.due?-1:1).map(t=>'<label class="todo"><input type="checkbox" data-id="'+t.id+'" '+(done(t.id)?'checked':'')+'><span>'+t.t+'<br><span class="chip">antes del '+fd(t.due)+'</span></span></label>').join('');
+h+='<h2>Fotos y rutas</h2><div class="scroll"><table><tr><th>Día</th><th>Puesta</th><th>Hora azul</th></tr>'+T.days.map(d=>{const s=T.sun[d.id];return '<tr><td>'+d.title+' ('+s.lugar+')</td><td>'+s.set+'</td><td>'+s.blue[0]+'-'+s.blue[1]+'</td></tr>'}).join('')+'</table></div><p class="mu">'+T.sun.src+'</p>';
+h+='<div class="row"><a class="btn" href="'+dir('parador','oleicola')+'" target="_blank" rel="noopener">Parador → almazara</a><a class="btn" href="'+dir('oleicola','baeza')+'" target="_blank" rel="noopener">Almazara → Baeza</a><a class="btn" href="'+dir('baeza','ubeda')+'" target="_blank" rel="noopener">Baeza → Úbeda</a><a class="btn" href="'+dir('ubeda','parador')+'" target="_blank" rel="noopener">Úbeda → Parador</a></div>';
+h+='<h2>Utilidades</h2>'+T.links.map(l=>'<p><a href="'+l.u+'" target="_blank" rel="noopener">'+l.n+'</a></p>').join('')+'<h3>SOS (funciona sin red)</h3><div class="row">'+T.sos.map(s=>'<a class="btn fill" href="tel:'+s.tel+'">'+s.n+' '+s.tel+'</a>').join('')+'</div>';
+const el=$('#info');el.innerHTML=h;toggles(el)}
+function foot(){$('#foot').innerHTML='<p>'+M.title+' · v'+M.ver+' · '+M.built+'</p><p>'+M.log+'</p><div class="row"><button class="btn" id="upd">Actualizar</button></div>';$('#upd').onclick=async()=>{try{const r=await navigator.serviceWorker.getRegistrations();await Promise.all(r.map(x=>x.unregister()));const k=await caches.keys();await Promise.all(k.map(x=>caches.delete(x)))}catch(e){}location.reload()}}
+function render(){inicio();dias();comer();reservas();info()}
+function show(){const t=(location.hash||'#inicio').slice(1);const id=['inicio','dias','comer','reservas','info'].includes(t)?t:(t.startsWith('d-')?'dias':'inicio');document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.id===id));document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));if(t.startsWith('d-')){const e=document.getElementById(t);if(e)e.scrollIntoView()}else window.scrollTo(0,0)}
+document.querySelectorAll('nav.tabs button').forEach(b=>b.onclick=()=>{location.hash='#'+b.dataset.t});
+addEventListener('hashchange',show);render();foot();show();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+})();
+</script>
+</body>
+</html>
