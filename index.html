@@ -13,7 +13,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
-<title>Jaén · 20-22 nov 2026</title>
+<title>Escapada a Jaén · 20-22 nov 2026</title>
 <style>
 :root{--bg:#ECEFE6;--sf:#F6F8F1;--ink:#1E2A1B;--mu:#4A5644;--ln:#C9D1BD;--ac:#4F6224;--on:#FFFFFF;--oil:#9A5F08;--wn:#7D5D10;--cr:#9A2A2A;--ok:#2A6F35;--dusk1:#27345F;--dusk2:#7A4A6B;--dusktx:#FFFFFF}
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141A12;--sf:#1B2318;--ink:#E6EBDD;--mu:#A4AF9A;--ln:#323D2D;--ac:#A5BC62;--on:#14200A;--oil:#D4A84A;--wn:#E0C070;--cr:#F08080;--ok:#6CC47C;--dusk1:#1C2650;--dusk2:#51376B;--dusktx:#F3EFFA}}
@@ -30,7 +30,7 @@ a{color:var(--ac)}
 .mu{color:var(--mu);font-size:.95rem}
 .card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;padding:14px 16px;margin:12px 0;box-shadow:0 2px 8px color-mix(in srgb,var(--ink) 9%,transparent)}
 .card h3{margin-top:0;display:flex;align-items:center;gap:8px}
-.card.k-next{border-left:6px solid var(--ac)}.card.k-night{border-left:6px solid var(--dusk2)}
+.card.k-next{border-left:6px solid var(--ac)}
 .hero{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 72%,var(--ink)));color:var(--on);border-radius:20px;padding:22px 20px;margin:8px 0 14px;box-shadow:0 6px 18px color-mix(in srgb,var(--ac) 28%,transparent);position:relative;overflow:hidden}
 .hero:after{content:attr(data-g);position:absolute;right:12px;top:4px;font-size:5rem;line-height:1;opacity:.22;pointer-events:none}
 .hero b{font:700 2.6rem/1 Georgia,serif;display:block}
@@ -68,7 +68,7 @@ ol.tl>li.star>.it{border-color:var(--oil)}
 .daynav{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(6px + env(safe-area-inset-top,0px)) 0 6px;border-bottom:1px solid var(--ln)}
 h2[id^=d-]{scroll-margin-top:76px;background:linear-gradient(90deg,color-mix(in srgb,var(--ac) 22%,var(--bg)),var(--bg));border-left:6px solid var(--ac);border-radius:0 14px 14px 0;padding:10px 14px;margin:26px 0 8px}
 .sun{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:6px;background:linear-gradient(135deg,var(--dusk1),var(--dusk2));color:var(--dusktx);border-radius:16px;padding:12px 14px;margin:12px 0;box-shadow:0 4px 14px color-mix(in srgb,var(--dusk1) 30%,transparent)}
-.sun div{text-align:center}.sun small{display:block;font-size:.85rem;opacity:.9}.sun b{font:700 1.05rem/1.3 system-ui,sans-serif;font-variant-numeric:tabular-nums}.sun em{grid-column:1/-1;text-align:center;font-style:normal;font-size:.9rem;opacity:.9}
+.sun div{text-align:center}.sun small{display:block;font-size:.9rem;opacity:.9}.sun b{font:700 1.05rem/1.3 system-ui,sans-serif;font-variant-numeric:tabular-nums}.sun em{grid-column:1/-1;text-align:center;font-style:normal;font-size:.9rem;opacity:.9}
 details.learn{margin:8px 0 0;border:1px solid var(--ln);border-radius:10px;background:var(--sf)}
 details.learn summary{min-height:44px;display:flex;align-items:center;gap:8px;padding:0 12px;font-weight:600;color:var(--ac);cursor:pointer;list-style:none}
 details.learn summary::-webkit-details-marker{display:none}
@@ -91,6 +91,18 @@ th,td{text-align:left;padding:8px 6px 8px 0;border-bottom:1px solid var(--ln);ve
 th{color:var(--mu)}
 .sec{display:none}.sec.on{display:block}
 footer{margin-top:28px;color:var(--mu);font-size:.9rem}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.ibtn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ln);background:var(--sf);font-size:1.25rem;line-height:1;cursor:pointer;box-shadow:0 2px 6px color-mix(in srgb,var(--ink) 8%,transparent)}
+.btn.sm{gap:6px;min-height:36px;padding:0 12px;border-radius:999px;font-size:.9rem;background:color-mix(in srgb,var(--ac) 10%,var(--sf));border-color:color-mix(in srgb,var(--ac) 35%,var(--ln));position:relative}
+.btn.sm:after{content:"";position:absolute;inset:-4px}
+.pd{padding:8px 0;border-bottom:1px solid var(--ln)}
+.est{margin:8px 0 0}
+.idea{padding:10px 0;border-top:1px solid var(--ln)}.idea:first-child{border-top:0;padding-top:2px}
+details.ideas{border-style:dashed;border-color:var(--ac)}
+.itin{list-style:none;padding:0;margin:4px 0}.itin li{margin:8px 0}
+.daynav a[aria-current]{background:color-mix(in srgb,var(--ac) 16%,var(--sf));border-width:2px}
+.alert a{font-weight:600}
+
 </style>
 </head>
 <body>
@@ -103,15 +115,15 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 <footer id="foot"></footer>
 </main>
 <nav class="tabs" role="tablist" aria-label="Secciones">
-<button role="tab" data-t="inicio"><span class="ic">🏠</span><span class="pill">Hoy</span></button><button role="tab" data-t="dias"><span class="ic">🗓️</span><span class="pill">Días</span></button><button role="tab" data-t="comer"><span class="ic">🍽️</span><span class="pill">Comer</span></button><button role="tab" data-t="reservas"><span class="ic">🎫</span><span class="pill">Reservas</span></button><button role="tab" data-t="info"><span class="ic">ℹ️</span><span class="pill">Info</span></button>
+<button role="tab" data-t="inicio"><span class="ic">🏠</span><span class="pill">Inicio</span></button><button role="tab" data-t="dias"><span class="ic">🗓️</span><span class="pill">Días</span></button><button role="tab" data-t="comer"><span class="ic">🍽️</span><span class="pill">Comer</span></button><button role="tab" data-t="reservas"><span class="ic">🎫</span><span class="pill">Reservas</span></button><button role="tab" data-t="info"><span class="ic">ℹ️</span><span class="pill">Info</span></button>
 </nav>
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.7',built:'2026-10-25',log:'v1.7 (25-oct-2026): motor 3.2.0 (aspecto nuevo: iconos, degradados, tarjetas) y glifo 🫒.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.8',built:'2026-10-25',log:'v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
-parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
+parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
 charger:{n:'Tesla Supercharger Jaén Plaza',city:'Jaén',q:'Tesla Supercharger Jaén Plaza, Paraje de las Lagunillas 1, Jaén',tel:'+34911982624',url:'https://www.tesla.com/findus/location/supercharger/299197'},
 oleicola:{n:'Oleícola San Francisco',city:'Begíjar',q:'Oleícola San Francisco, Begíjar',tel:'+34953763415'},
 baeza:{n:'Baeza (centro)',city:'Baeza',lat:37.983,lng:-3.467,q:'Plaza de Santa María, Baeza'},
@@ -120,47 +132,47 @@ mirador:{n:'Redonda de Miradores',city:'Úbeda',lat:38.00797,lng:-3.36686,q:'Red
 banos:{n:'Baños Árabes (Palacio de Villardompardo)',city:'Jaén',q:'Baños Árabes, Plaza de Santa Luisa de Marillac, Jaén',url:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'}
 },
 days:[
-{id:'vie',date:'2026-11-20',base:'parador',title:'Viernes 20',note:'Viaje y llegada tranquila.',tiempo:['jaen'],
+{id:'vie',date:'2026-11-20',base:'parador',title:'Viernes 20 - Madrid y llegada a Jaén',note:'Viaje y llegada tranquila.',tiempo:['jaen'],
 lens:'Sigma 18-50 f/2.8 (noche). RF 18-150 y RF 100-400: no hacen falta hoy.',planB:'Si llegas después de las 22:00, avisa al Parador para asegurar la cena.',
 items:[
+{t:'Mañana',what:'Antes de salir: maleta hecha, baterías cargadas y mapas offline',k:'🧳',todo:'maleta'},
 {t:'Tarde',what:'Madrid → Jaén',k:'🚗',km:335,place:'charger',note:'≈3 h 15 min sin contar la carga (tu estimación). Standard Range: para a cargar donde te indique el coche (navegación de Tesla).'},
 {t:'~21:00',what:'Llegada y check-in en el Parador de Jaén',in:1,place:'parador',learn:'castillo',todo:'cargador',note:'Conecta el coche al cargador del Parador o carga en el Supercharger de Jaén Plaza.'},
-{t:'Cena',what:'Cena en el Parador o en taxi al centro',meal:'cena',opts:['parador','gorrion','manchega','mangas'],res:'Pendiente',todo:'cena-vie',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan).'}]},
-{id:'sab',date:'2026-11-21',base:'ubeda',title:'Sábado 21',note:'Aceite, Baeza y Úbeda. ≈120 km en el día.',tiempo:['baeza','ubeda','jaen'],
+{t:'Cena',what:'Cena en el Parador o en taxi al centro',meal:'cena',opts:['parador','gorrion','manchega','mangas'],est:'pendiente',todo:'cena-vie',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan).'}]},
+{id:'sab',date:'2026-11-21',base:'ubeda',title:'Sábado 21 - Almazara, Baeza y Úbeda',note:'Aceite, Baeza y Úbeda. ≈120 km en el día.',tiempo:['baeza','ubeda','jaen'],
 lens:'Almazara: Sigma 18-50 f/2.8 (interior). Baeza y Úbeda de día: RF 18-150. Miradores y hora azul: Sigma 18-50 f/2.8. RF 100-400 solo si quieres comprimir el olivar desde el mirador.',planB:'Si llueve: acorta Baeza (Pópulo y Santa María) y haz Úbeda por dentro (Sacra Capilla y Palacio de las Cadenas).',
 items:[
 {t:'08:30',what:'Salida del Parador',k:'🚗',km:42,note:'≈40 min; llegada hacia las 9:10, con margen para la visita de las 9:45.'},
 {t:'09:45',what:'Oleícola San Francisco (Begíjar)',k:'🫒',star:1,place:'oleicola',learn:'olivar',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
 {t:'12:55',what:'Begíjar → Baeza',k:'🚗',km:7,note:'≈10 min.'},
 {t:'13:00',what:'Baeza con luz',k:'🏛️',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
-{t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],res:'Pendiente',todo:'com-baeza'},
+{t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],est:'pendiente',todo:'com-baeza'},
 {t:'15:30',what:'Baeza → Úbeda',k:'🚗',km:10},
 {t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
 {t:'17:30',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,blue:'mirador',place:'mirador',learn:'olivar',note:'Puesta {set}. Quédate hasta {b2}.'},
-{t:'18:45',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa'],note:'Después de la hora azul, que termina hacia las {b2}.'},
-{t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],res:'Pendiente',todo:'cena-sab'},
+{t:'18:45',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa'],est:'pendiente',note:'Después de la hora azul, que termina hacia las {b2}.'},
+{t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],est:'pendiente',todo:'cena-sab'},
 {t:'Al final',what:'Vuelta al Parador',k:'🚗',km:60,place:'parador',note:'≈50 min. Si no cenas en Úbeda, sal tras el tapeo (~19:30). Con cena, será de noche cerrada. Deja el coche cargando.'}]},
-{id:'dom',date:'2026-11-22',base:'parador',title:'Domingo 22',note:'Jaén sin coche por la mañana y vuelta a Madrid.',tiempo:['jaen'],
+{id:'dom',date:'2026-11-22',base:'parador',title:'Domingo 22 - Jaén y vuelta a Madrid',note:'Jaén sin coche por la mañana y vuelta a Madrid.',tiempo:['jaen'],
 lens:'Baños Árabes (poca luz): Sigma 18-50 f/2.8. Exteriores de Jaén: RF 18-150. RF 100-400: no necesario.',planB:'Si la visita no entra en la Catedral, prioriza los Baños Árabes (abren el domingo hasta las 14:45).',
 items:[
-{t:'09:30',what:'Desayuno en el Parador',k:'☕'},
 {t:'10:00',what:'Check-out y maletas en consigna',out:1,place:'parador',todo:'checkout',note:'Confirma con el Parador la hora de salida y la consigna.'},
 {t:'10:10',what:'Taxi al punto de encuentro',dur:10,note:'Unos 10 min desde el Parador.'},
 {t:'10:30',what:'Visita guiada Civitatis: Catedral, Búnker y Baños Árabes',star:1,place:'banos',learn:'banos',learn2:'catedral',todo:'civitatis',note:'Reservada de 10:30 a ~13:00. Baños Árabes: domingo 9:15-14:45 (último pase 14:15).'},
-{t:'13:00',what:'Comida en Jaén',meal:'comida',opts:['antonio','mangas'],res:'Pendiente',todo:'com-dom'},
+{t:'13:00',what:'Comida en Jaén',meal:'comida',opts:['antonio','mangas'],est:'pendiente',todo:'com-dom'},
 {t:'14:30',what:'Taxi al Parador, recoger maletas y cargar',place:'parador',note:'Alternativa de carga: Supercharger Jaén Plaza (24 h).'},
 {t:'~15:00',what:'Jaén → Madrid',k:'🚗',km:335,place:'charger',note:'Llegada ≈18:30-19:00 más las paradas de carga que indique el coche. Puesta {set}: el último tramo es de noche.'}]}
 ],
 alerts:[
-{day:'dom',lvl:'atencion',msg:'La visita podría no entrar en la Catedral el domingo por la mañana (misa): lo indica un listado del mismo recorrido. Confirma con Civitatis.',src:'centraldereservas.com',verified:'2026-10-25',until:'2026-11-22'},
-{day:'sab',lvl:'atencion',msg:'Horario de la Sacra Capilla sin verificar en fuente oficial. Tu plan decía 9:30-19:00; un listado de entradas muestra 10:00-18:30 (viernes).',src:'expedia.com',verified:'2026-10-25',until:'2026-11-21'},
+{day:'dom',lvl:'atencion',msg:'La visita podría no entrar en la Catedral el domingo por la mañana (misa), según [un listado de la visita guiada por Jaén](https://actividades.centraldereservas.com/d/jaen/visita-guiada-por-jaen-lstYG1WG). Confirma con Civitatis.',src:'Central de Reservas',url:'https://actividades.centraldereservas.com/d/jaen/visita-guiada-por-jaen-lstYG1WG',verified:'2026-10-25',until:'2026-11-22'},
+{day:'sab',lvl:'atencion',msg:'Horario de la [Sacra Capilla](https://www.expedia.com/things-to-do/ubeda-holy-chapel-of-the-savior-entry-ticket.a47879543.activity-details) sin verificar en fuente oficial. Tu plan decía 9:30-19:00; un listado de entradas muestra 10:00-18:30 (viernes).',src:'Expedia',url:'https://www.expedia.com/things-to-do/ubeda-holy-chapel-of-the-savior-entry-ticket.a47879543.activity-details',verified:'2026-10-25',until:'2026-11-21'},
 {day:'sab',lvl:'info',msg:'Puesta {set} en Úbeda y hora azul {b1}–{b2}. La vuelta a Jaén es de noche (~50 min).',src:'cálculo por coordenadas y fecha',verified:'2026-10-25',until:'2026-11-21'},
 {day:'vie',lvl:'info',msg:'Llegada ~21:00: la subida al Parador no es para hacerla a pie.',src:'tu plan',verified:'2026-10-25',until:'2026-11-20'}],
 bookings:[
 {id:'almazara',tipo:'Visita',n:'Oleícola San Francisco',st:'ok',when:'sáb 21 · 9:45-12:45',dir:'C/ Pedro Pérez s/n, Begíjar',cancel:'ver correo',place:'oleicola'},
 {id:'civitatis',tipo:'Visita guiada',n:'Civitatis: Catedral, Búnker y Baños Árabes',st:'ok',when:'dom 22 · 10:30-13:00',dir:'Punto de encuentro: por confirmar',cancel:'ver Civitatis',place:'banos'},
-{id:'parador',tipo:'Hotel',n:'Parador de Jaén',st:'ver',when:'vie 20 → dom 22',in:'2026-11-20',out:'2026-11-22',dir:'Castillo de Santa Catalina s/n, Jaén',check:'Check-in/out: ver confirmación (no verificado)',cancel:'ver correo/Wallet',place:'parador'}],
-coche:{n:'Tesla Model 3 Standard Range',txt:'Madrid-Jaén ≈335 km. Para a cargar donde te indique el coche. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.',place:'charger'},
+{id:'parador',tipo:'Hotel',n:'Parador de Jaén',st:'ver',when:'vie 20 → dom 22',in:'2026-11-20',out:'2026-11-22',cargador:'ver',dir:'Castillo de Santa Catalina s/n, Jaén',check:'Check-in/out: ver confirmación (no verificado)',cancel:'ver correo/Wallet',place:'parador'}],
+coche:{vehiculo:'tesla',n:'Tesla Model 3 Standard Range',txt:'Madrid-Jaén ≈335 km. Para a cargar donde te indique el coche. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.',place:'charger'},
 food:{ver:'2026-10-25',
 tipicos:[
 {n:'Andrajos',d:'Guiso de invierno con tortas finas de harina que se rompen en el caldo, sobre un sofrito de tomate, pimiento, cebolla y ajo. Lleva conejo o bacalao; el de bacalao se asocia a Úbeda y Baeza.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
@@ -171,20 +183,20 @@ tipicos:[
 {n:'Huevos moles',d:'Postre de huevo, leche y azúcar: natillas con merengue por encima, aromatizadas con canela y limón.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
 {n:'Aceite de oliva virgen extra',d:'El producto estrella de Jaén; lo normal es tomarlo mojado con pan.',src:'Guías Viajar',url:'https://guias-viajar.com/turismo-espana/visitar-andalucia/jaen-sierras-cazorla-segura-gastronomia/'}],
 rest:[
-{id:'parador',n:'Restaurante del Parador de Jaén',d:'Jaén',q:'Parador de Jaén restaurante'},
-{id:'gorrion',n:'Casa Gorrión',d:'Jaén',q:'Casa Gorrión, Jaén'},
-{id:'manchega',n:'La Manchega',d:'Jaén',q:'La Manchega, Jaén'},
-{id:'mangas',n:'Mangas Verdes',d:'Jaén',q:'Mangas Verdes, Jaén'},
-{id:'antonio',n:'Casa Antonio',d:'Jaén',q:'Casa Antonio, Jaén'},
-{id:'andres',n:'Casa Andrés',d:'Baeza',q:'Casa Andrés, Baeza'},
-{id:'rincon',n:'Rincón Baezano',d:'Baeza',q:'Rincón Baezano, Baeza'},
-{id:'estacion',n:'Cantina La Estación',d:'Úbeda',q:'Cantina La Estación, Úbeda'},
-{id:'cultural',n:'La Cultural',d:'Úbeda',q:'La Cultural, Úbeda'},
-{id:'misa',n:'Misa de 12 (tapas)',d:'Úbeda',q:'Misa de 12, Úbeda'}]},
+{id:'parador',n:'Restaurante del Parador de Jaén',d:'Jaén',desc:'Cocina tradicional jiennense de raíces andaluzas, con aceite de oliva virgen extra, platos de cuchara y caza. Salón monumental con arcos de piedra y techos de madera.'},
+{id:'gorrion',n:'Casa Gorrión',d:'Jaén',desc:'Taberna de quesos añejos, chacinas, paté de perdiz y pipirrana. Decoración tan peculiar que parece un museo.'},
+{id:'manchega',n:'La Manchega',d:'Jaén',desc:'Tasca de bocadillos contundentes, migas y tapas tradicionales a precios populares. Ambiente castizo, rústico y animado.'},
+{id:'mangas',n:'Mangas Verdes',d:'Jaén',desc:'Taberna gastronómica atípica: cocina de la provincia con toque personal y platos de vanguardia (Guía Michelin). Ambiente informal, con vinos por copas, cerca de la catedral.'},
+{id:'antonio',n:'Casa Antonio',d:'Jaén',desc:'Cocina de mercado y de temporada, tradicional con técnicas actuales, y menú degustación. Barra y terraza informales o salón principal más formal.'},
+{id:'andres',n:'Casa Andrés',d:'Baeza',desc:'Taberna de cocina tradicional (ahumados, lagarto, alcachofas con jamón ibérico), con terraza y vistas al valle.'},
+{id:'rincon',n:'Rincón Baezano',d:'Baeza',desc:'Cocina tradicional con carta y un menú de tres platos muy completo.'},
+{id:'estacion',n:'Cantina La Estación',d:'Úbeda',desc:'Cocina de tradición y vanguardia (Guía Michelin), en un local decorado como un vagón de tren.'},
+{id:'cultural',n:'La Cultural',d:'Úbeda',desc:'Cocina andaluza en la antigua Casa de Cofradías: patio con columnas, salas, terraza y un pequeño teatro.'},
+{id:'misa',n:'Misa de 12 (tapas)',d:'Úbeda',desc:'Tapas tradicionales (lomo de orza, mojama, morcilla de caldera), citado como uno de los mejores sitios de tapeo de Úbeda.'}]},
 tiempo:{
-jaen:{n:'Jaén',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/jaen-id23050',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/jaen-id23050'},
-baeza:{n:'Baeza',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/baeza-id23009',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/baeza-id23009'},
-ubeda:{n:'Úbeda',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/ubeda-id23092',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/ubeda-id23092'}},
+jaen:{n:'Jaén',place:'parador',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/jaen-id23050',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/jaen-id23050'},
+baeza:{n:'Baeza',place:'baeza',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/baeza-id23009',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/baeza-id23009'},
+ubeda:{n:'Úbeda',place:'ubeda',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/ubeda-id23092',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/ubeda-id23092'}},
 learn:{
 olivar:{t:'El mar de olivos',sum:'Jaén es la provincia del olivar: el cultivo ocupa casi cuatro quintas partes de su superficie agrícola.',cur:['Más de 65 millones de olivos y cerca del 25 % del aceite del mundo, según El Debate (2024).','El olivo llegó a la península con los fenicios, hacia el 1100 a. C. (UPO, 2022); lo impulsaron después los romanos.'],src:'El Debate · UPO',url:'https://www.eldebate.com/espana/andalucia/20240307/jaen-tierra-olivo-hay-arboles-este-tipo-habitantes-toda-espana_177841.html',ver:'2026-10-25'},
 patrimonio:{t:'Baeza y Úbeda, Patrimonio Mundial',sum:'La UNESCO las inscribió en 2003 como ejemplos tempranos y excepcionales de arquitectura y urbanismo renacentistas del siglo XVI en España.',cur:['Andrés de Vandelvira fue el arquitecto principal del conjunto.','Según la UNESCO, sus modelos se difundieron hacia América Latina a través de publicaciones.'],src:'UNESCO, decisión 27 COM 8C.42',url:'https://whc.unesco.org/fr/decisions/737/',ver:'2026-10-25'},
@@ -193,13 +205,21 @@ catedral:{t:'Catedral de Jaén',sum:'Nació sobre una antigua mezquita. Vandelvi
 banos:{t:'Baños Árabes de Jaén',sum:'Del siglo XI y con unos 450 m², son probablemente los mayores baños árabes visitables de España.',cur:['A finales del siglo XVI el conde de Villardompardo, virrey del Perú, edificó su palacio encima y los ocultó.','Una pequeña parte reapareció en 1913 durante un inventario de monumentos.'],src:'Jaén Paraíso Interior',url:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes',ver:'2026-10-25'},
 castillo:{t:'Castillo de Santa Catalina y Parador',sum:'Fortaleza musulmana del siglo VIII sobre el cerro; Fernando III tomó Jaén en 1246 y mandó construir el Castillo Nuevo.',cur:['El Parador se levantó en 1965 (diseño de José Luis Picardo) y destruyó parte del castillo antiguo.','Una gran cruz en lo alto recuerda la que hizo erigir Fernando III.'],src:'Wikipedia',url:'https://en.wikipedia.org/wiki/Castle_of_Santa_Catalina_(Ja%C3%A9n)',ver:'2026-10-25'}},
 todos:[
+{id:'maleta',t:'Hacer la maleta (cargar baterías de cámara y móvil; descargar mapas y reservas offline)',due:'2026-11-19',day:'vie'},
 {id:'cargador',t:'Confirmar con el Parador el cargador (cómo pedirlo, conector) o usar el Supercharger',due:'2026-11-13',day:'vie'},
 {id:'cena-vie',t:'Cena del viernes: reservar y avisar de llegada ~21:00',due:'2026-11-13',day:'vie'},
-{id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13',day:'dom'},
+{id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13',day:'dom',hecho:true},
 {id:'checkout',t:'Confirmar con el Parador la hora de check-out, la consigna de maletas y si el coche puede seguir cargando',due:'2026-11-13',day:'dom'},
 {id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:00)',due:'2026-11-10',day:'sab'},
 {id:'cena-sab',t:'Decidir y reservar cena del sábado: Úbeda o Parador',due:'2026-11-12',day:'sab'},
 {id:'com-dom',t:'Reservar comida del domingo en Jaén (13:00)',due:'2026-11-12',day:'dom'}],
+check:{
+'Documentos y dinero':[{id:'doc-dni',t:'DNI o pasaporte'},{id:'doc-sanitaria',t:'Tarjeta sanitaria'},{id:'doc-tarjetas',t:'Tarjetas y algo de efectivo'},{id:'doc-reservas',t:'Billetes y reservas accesibles sin conexión (correo/Wallet)'},{id:'doc-carnet',t:'Permiso de conducir'}],
+'Electrónica':[{id:'elec-movil',t:'Móvil y cargador'},{id:'elec-bateria',t:'Batería externa'},{id:'elec-cables',t:'Cables'},{id:'elec-auriculares',t:'Auriculares'}],
+'Salud y aseo':[{id:'salud-medicacion',t:'Medicación personal y botiquín básico'},{id:'salud-gafas',t:'Gafas o lentillas y repuesto'},{id:'salud-solar',t:'Protector solar o de labios'},{id:'salud-neceser',t:'Neceser'}],
+'Ropa y clima':[{id:'ropa-capas',t:'Capas y calzado cómodo según el pronóstico'},{id:'ropa-lluvia',t:'Impermeable o paraguas'},{id:'ropa-azul',t:'Ropa de abrigo para la hora azul (frío al atardecer)'}],
+'Foto':[{id:'foto-camara',t:'Canon R7'},{id:'foto-baterias',t:'2–3 baterías y cargador'},{id:'foto-sd',t:'Tarjetas SD vacías'},{id:'foto-sigma',t:'Sigma 18-50 f/2.8'},{id:'foto-rf18',t:'RF 18-150'},{id:'foto-rf100',t:'RF 100-400 (solo con motivo concreto)'},{id:'foto-tripode',t:'Trípode o minitrípode para la hora azul'},{id:'foto-limpieza',t:'Paño de limpieza y bolsa antilluvia'}],
+'Coche':[{id:'coche-docs',t:'Carnet y documentación del vehículo'},{id:'coche-soporte',t:'Soporte de móvil y cable'},{id:'coche-ruta',t:'Ruta descargada offline'}]},
 links:[
 {n:'Baños Árabes de Jaén (horarios oficiales)',u:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'},
 {n:'Supercharger Jaén Plaza (Tesla)',u:'https://www.tesla.com/findus/location/supercharger/299197'},
@@ -207,25 +227,39 @@ links:[
 sos:[{n:'Emergencias',tel:'112'},{n:'Tesla asistencia',tel:'+34911982624'}]
 };
 
-/* ═══ MOTOR v3.2 (ajustes de Jaén marcados «AJUSTE JAÉN») ═══ */
+/* ═══ MOTOR v3.3 (no tocar salvo mejora de plantilla) ═══ */
 (function(){
-const TPL='3.2.0';
+const TPL='3.3.0';
 const T=TRIP,M=T.meta,MOD=T.modules||{},TZ=M.tz||'Europe/Madrid',$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-T.alerts=T.alerts||[];T.todos=T.todos||[];T.bookings=T.bookings||[];T.links=T.links||[];T.sos=T.sos||[];T.learn=T.learn||{};T.tiempo=T.tiempo||{};
+T.alerts=T.alerts||[];T.todos=T.todos||[];T.bookings=T.bookings||[];T.links=T.links||[];T.sos=T.sos||[];T.learn=T.learn||{};T.tiempo=T.tiempo||{};T.actividades=T.actividades||[];
 const ls={g(k){try{return localStorage.getItem(M.slug+':'+k)}catch(e){return null}},s(k,v){try{localStorage.setItem(M.slug+':'+k,v)}catch(e){}}};
 const Q=new URLSearchParams(location.search);
 function now(){const s=Q.get('sim');if(s)return{d:s.slice(0,10),t:s.slice(11,16)||'12:00'};const x=new Intl.DateTimeFormat('sv-SE',{timeZone:TZ,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date()).split(' ');return{d:x[0],t:x[1]}}
 const hm=ms=>new Intl.DateTimeFormat('sv-SE',{timeZone:TZ,hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(ms);
 const diff=(a,b)=>Math.round((Date.parse(b)-Date.parse(a))/864e5);
 const fd=d=>new Date(d+'T12:00:00Z').toLocaleDateString('es-ES',{timeZone:'UTC',weekday:'short',day:'numeric',month:'short'});
+const MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const rango=(a,b)=>{const [y1,m1,d1]=a.split('-').map(Number),[y2,m2,d2]=b.split('-').map(Number);if(a===b)return d1+' '+MES[m1-1]+' '+y1;if(y1===y2&&m1===m2)return d1+'-'+d2+' '+MES[m1-1]+' '+y1;if(y1===y2)return d1+' '+MES[m1-1].slice(0,3)+'-'+d2+' '+MES[m2-1].slice(0,3)+' '+y1;return d1+' '+MES[m1-1].slice(0,3)+' '+y1+'-'+d2+' '+MES[m2-1].slice(0,3)+' '+y2};
+const sub=()=>(M.lugares&&M.lugares.length?M.lugares.join(', ')+' · '+rango(M.start,M.end):M.sub||rango(M.start,M.end));
 const PL=id=>T.places[id];
 const rest=id=>((T.food||{}).rest||[]).find(r=>r.id===id);
 const pq=p=>p.q||(p.lat!=null?p.lat+','+p.lng:p.n+' '+(p.city||p.d||''));
 const maps=p=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(pq(p));
-const dirU=ids=>'https://www.google.com/maps/dir/'+ids.map(id=>encodeURIComponent(pq(PL(id)))).join('/');
 const A=(h,t,c)=>'<a class="btn'+(c?' '+c:'')+'" href="'+h+'" target="_blank" rel="noopener">'+t+'</a>';
-const lnk=p=>A(maps(p),'Mapa')+(p.tel?'<a class="btn" href="tel:'+p.tel+'">Llamar</a>':'')+(p.url?A(p.url,'Horarios'):'');
-const tq=ks=>'<div class="row">'+ks.map(k=>A(T.tiempo[k].horas||T.tiempo[k].url,'Tiempo '+T.tiempo[k].n)).join('')+'</div>';
+/* botones compactos: mapa, llamar y horarios solo en Reservas (o en una parada con mapa:true) */
+const lnk=p=>'<div class="row">'+A(maps(p),'📍 Mapa','sm')+(p.tel?'<a class="btn sm" href="tel:'+p.tel+'">📞 Llamar</a>':'')+(p.url?A(p.url,'🕒 Horarios','sm'):'')+'</div>';
+const md=s=>String(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+const dshort=d=>d.title.split(' - ')[0];
+/* ── Tiempo: icono según previsión (Open-Meteo, ~16 días; sin dato: ⛅) ── */
+const WX={};
+try{Object.keys(T.tiempo).forEach(k=>{const c=ls.g('wx:'+k);if(c)WX[k]=JSON.parse(c)})}catch(e){}
+const wico=c=>c==null?'⛅':c===0?'☀️':c<=2?'🌤️':c===3?'☁️':c<=48?'🌫️':c<=57?'🌦️':c<=67?'🌧️':c<=77?'❄️':c<=82?'🌦️':c<=86?'🌨️':'⛈️';
+const wplace=k=>{const t=T.tiempo[k];if(!t)return null;if(t.place&&PL(t.place))return PL(t.place);return Object.values(T.places).find(p=>(p.city||p.n)===t.n)||null};
+const wicon=(k,date)=>{const w=WX[k],i=w&&w.time?w.time.indexOf(date):-1;return wico(i<0?null:w.code[i])};
+const tq=(ks,date)=>'<div class="row">'+ks.filter(k=>T.tiempo[k]).map(k=>A(T.tiempo[k].horas||T.tiempo[k].url,'<span data-wx="'+k+'|'+date+'">'+wicon(k,date)+'</span> '+T.tiempo[k].n,'sm')).join('')+'</div>';
+let wxP=null;
+function wxLoad(){if(wxP)return wxP;wxP=Promise.all(Object.keys(T.tiempo).map(async k=>{const p=wplace(k);if(!p||p.lat==null)return;try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+p.lat+'&longitude='+p.lng+'&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone='+encodeURIComponent(TZ)+'&forecast_days=16');const o=await r.json();if(o&&o.daily){WX[k]={time:o.daily.time,code:o.daily.weather_code,tmax:o.daily.temperature_2m_max,tmin:o.daily.temperature_2m_min,pop:o.daily.precipitation_probability_max,ts:new Date().toISOString()};ls.s('wx:'+k,JSON.stringify(WX[k]))}}catch(e){}})).then(wxPaint);return wxP}
+function wxPaint(){$$('[data-wx]').forEach(s=>{const [k,d]=s.dataset.wx.split('|');s.textContent=wicon(k,d)});$$('[data-wxnow]').forEach(s=>{const [k,d]=s.dataset.wxnow.split('|'),w=WX[k],i=w&&w.time?w.time.indexOf(d):-1;s.textContent=i<0?'Sin previsión guardada para hoy.':wico(w.code[i])+' '+Math.round(w.tmin[i])+'° / '+Math.round(w.tmax[i])+'° · lluvia '+w.pop[i]+' % (Open-Meteo, '+new Date(w.ts).toLocaleString('es-ES',{timeZone:TZ,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})+')'})}
 /* ── Sol offline (NOAA simplificado): puesta −0,833°, hora azul −4° a −8° ── */
 const RAD=Math.PI/180;
 function sunAlt(ms,la,lo){const d=ms/864e5+2440587.5-2451545,g=(357.529+0.98560028*d)*RAD,q=280.459+0.98564736*d;const L=(q+1.915*Math.sin(g)+0.020*Math.sin(2*g))*RAD,e=(23.439-3.6e-7*d)*RAD;const ra=Math.atan2(Math.cos(e)*Math.sin(L),Math.cos(L)),de=Math.asin(Math.sin(e)*Math.sin(L));const H=(18.697374558+24.06570982441908*d)*15*RAD+lo*RAD-ra;return Math.asin(Math.sin(la*RAD)*Math.sin(de)+Math.cos(la*RAD)*Math.cos(de)*Math.cos(H))/RAD}
@@ -235,109 +269,129 @@ p=sunAlt(n0,la,lo);for(let i=1;i<=720;i++){const t=n0-i*6e4,a=sunAlt(t,la,lo);if
 const SUN={};
 function sun(date,id){const k=date+'|'+id;if(k in SUN)return SUN[k];const p=id&&PL(id);let r=null;if(p&&p.lat!=null){const e=sunEv(date,p.lat,p.lng);if(e.set&&e.b1&&e.b2)r={rise:e.rise?hm(e.rise):'—',set:hm(e.set),b1:hm(e.b1),b2:hm(e.b2),lugar:p.city||p.n}}return SUN[k]=r}
 const tk=(s,date,id)=>{const u=sun(date,id);return u?String(s).replace(/\{(rise|set|b1|b2)\}/g,(m,k)=>u[k]):s};
-const sunB=u=>u?'<div class="sun"><div><small>🌅 Amanecer</small><b>'+u.rise+'</b></div><div><small>🌇 Puesta</small><b>'+u.set+'</b></div><div><small>🔵 Hora azul</small><b>'+u.b1+'–'+u.b2+'</b></div><em>'+u.lugar+'</em></div>':'';
+const sunB=u=>u?'<div class="sun"><div><small>🌅 Amanecer</small><b>'+u.rise+'</b></div><div><small>🌇 Puesta</small><b>'+u.set+'</b></div><div><small>🔵 Hora azul</small><b>'+u.b1+'–'+u.b2+'</b></div></div>':'';
 const G=d=>M.glifo||d;
 const ico=i=>i.k?i.k:i.in?'🏨':i.out?'🧳':i.meal?(i.meal==='cena'?'🍷':'🍽️'):i.blue?'📸':/vuelo|aterriza|despega|\bIB\d|\bVY\d/i.test(i.what)?'✈️':/\bTER\b|tren|autob|bus\b|navette|tranv|tram|metro|taxi|coche|caminar|a pie/i.test(i.what)?'🚆':i.act?'🎈':i.star?'⭐':'📍';
-const sunH=u=>u?'☀ Puesta <b>'+u.set+'</b> · Hora azul <b>'+u.b1+'–'+u.b2+'</b> · Amanecer '+u.rise+' ('+u.lugar+')':'';
+const sunH=u=>u?'☀ Puesta <b>'+u.set+'</b> · Hora azul <b>'+u.b1+'–'+u.b2+'</b> · Amanecer '+u.rise:'';
 /* ── Estado ── */
-const done=id=>ls.g('t:'+id)==='1';
 const km=T.days.reduce((s,d)=>s+d.items.reduce((a,i)=>a+(i.km||0),0),0);
 const act=d=>T.alerts.filter(a=>a.until>=d);
 const LV={info:'Info',atencion:'Atención',critico:'Crítico'};
-const al=a=>{const d=T.days.find(x=>x.id===a.day);return '<div class="alert '+a.lvl+'"><b>'+LV[a.lvl]+':</b> '+(d?tk(a.msg,d.date,d.base):a.msg)+'<small>Fuente: '+a.src+' · '+(a.verified?'verificado '+a.verified:'sin verificar')+' · vigente hasta '+fd(a.until)+'</small></div>'};
-const toggles=el=>el.querySelectorAll('input[data-id]').forEach(i=>i.onchange=()=>{ls.s('t:'+i.dataset.id,i.checked?'1':'0');render()});
-const chk=(t,d)=>'<label class="todo"><input type="checkbox" data-id="'+t.id+'" '+(done(t.id)?'checked':'')+'><span>'+t.t+'<br><span class="chip '+(d!=null&&d<0&&!done(t.id)?'c-bad':d!=null&&d<=3&&!done(t.id)?'c-warn':'')+'">antes del '+fd(t.due)+(d!=null&&d<0&&!done(t.id)?' · vencido':'')+'</span></span></label>';
+const al=a=>{const d=T.days.find(x=>x.id===a.day);return '<div class="alert '+a.lvl+'"><b>'+LV[a.lvl]+':</b> '+md(d?tk(a.msg,d.date,d.base):a.msg)+'<small>Fuente: '+(a.url?'<a href="'+a.url+'" target="_blank" rel="noopener">'+a.src+'</a>':a.src)+' · '+(a.verified?'verificado '+a.verified:'sin verificar')+' · vigente hasta '+fd(a.until)+'</small></div>'};
+/* Pendientes: solo lectura. Se cierran en el chat del viaje (todo.hecho:true). */
+const openT=()=>T.todos.filter(t=>!t.hecho).sort((a,b)=>a.due<b.due?-1:1);
+const pend=(t,d)=>'<div class="pd"><span class="chip '+(d!=null&&d<0?'c-bad':d!=null&&d<=3?'c-warn':'')+'">'+(d!=null&&d<0?'vencido el ':'antes del ')+fd(t.due)+'</span> '+t.t+'</div>';
+/* Checklist de maleta: casillas por dispositivo, con identificador estable (no depende de la versión de la web) */
+const hs=s=>{let h=5381;for(const c of String(s).toLowerCase().replace(/\s+/g,' ').trim())h=(h*33^c.charCodeAt(0))>>>0;return h.toString(36)};
 const RK={seguro:'c-ok',confirmar:'c-warn',evitar:'c-bad'};
 const rk=r=>MOD.dieta&&r.risk?' <span class="chip '+RK[r.risk]+'">'+r.risk[0].toUpperCase()+r.risk.slice(1)+'</span>':'';
 const ST={ok:['Reservado','c-ok'],ver:['Ver correo/Wallet','c-warn'],pend:['Pendiente','c-warn'],none:['Sin reserva','']};
+const EST={reservado:['Reservado','c-ok'],pendiente:['Reserva pendiente','c-warn'],flexible:['Flexible','']};
+const todoOf=i=>i.todo&&T.todos.find(t=>t.id===i.todo);
+function estOf(i){if(i.est&&EST[i.est])return EST[i.est];const td=todoOf(i);if(td&&td.hecho)return EST.reservado;if(i.meal||i.res)return EST.pendiente;if(td)return['Pendiente','c-warn'];return null}
+const VEH={tesla:{n:'Tesla Model 3 Standard (eléctrico)',carga:'imprescindible'},bmw:{n:'BMW X3 (híbrido enchufable)',carga:'opcional'},otro:{n:'Otro vehículo o alquiler',carga:'por confirmar'}};
+const veh=()=>MOD.coche&&T.coche&&VEH[T.coche.vehiculo];
+function cargaChip(b){const v=veh();if(!v||b.tipo!=='Hotel')return '';const c=b.cargador;if(c==='si')return ' <span class="chip c-ok">⚡ Cargador: sí</span>';if(c==='no')return ' <span class="chip '+(T.coche.vehiculo==='tesla'?'c-bad':'')+'">⚡ Sin cargador</span>';return ' <span class="chip '+(T.coche.vehiculo==='tesla'?'c-warn':'')+'">⚡ Cargador: por confirmar'+(T.coche.vehiculo==='bmw'?' (opcional)':'')+'</span>'}
 function hotelOn(d){return T.bookings.find(b=>b.tipo==='Hotel'&&b.in&&b.in<=d&&d<b.out)}
-/* ── Hoy ── */
-function inicio(){const n=now(),c=diff(n.d,M.start),el=$('#inicio');
-const open=T.todos.filter(t=>!done(t.id)).sort((a,b)=>a.due<b.due?-1:1);
-let h='<h1>'+M.title+'</h1><p class="mu">'+M.sub+'</p>';
+/* ── Inicio ── */
+function hd(){return '<div class="hd"><div><h1>'+M.title+'</h1><p class="mu">'+sub()+'</p></div><button class="ibtn" id="thm" aria-label="Cambiar entre tema claro y oscuro">'+(eff()==='dark'?'☀️':'🌙')+'</button></div>'}
+function inicio(){const n=now(),c=diff(n.d,M.start),el=$('#inicio'),op=openT();
 const okb=T.bookings.filter(b=>b.st==='ok').length;
-const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+open.length+' pendientes</span></div>';
-const day=T.days.find(d=>d.date===n.d);
-if(c>0){h+='<div class="hero" data-g="'+G('🧳')+'"><b>'+c+'</b>días para el viaje'+stats+'</div>'+(Object.keys(T.tiempo).length?'<div class="card"><h3>Tiempo</h3><p class="mu">Consulta la previsión unos días antes de salir.</p>'+tq(Object.keys(T.tiempo))+'</div>':'')+act(n.d).filter(a=>a.lvl!=='info').map(al).join('')+'<h2>Pendientes por fecha límite</h2>'+(open.length?open.map(t=>chk(t,diff(n.d,t.due))).join(''):'<p class="mu">Todo hecho.</p>')}
-else if(day){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(itemT(day,i));return m&&m[1]>=n.t});const ce=day.items.find(i=>i.meal==='cena'),ho=hotelOn(n.d),u=sun(day.date,day.base);
-h+='<div class="hero" data-g="'+G('☀️')+'"><b>'+day.title+'</b>'+day.note+stats+'</div>'+sunB(u);
-h+='<div class="card k-next"><h3>⏭️ Siguiente paso</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':'')+(nx.place?'<div class="row">'+lnk(PL(nx.place))+'</div>':''):'<p>Día completado.</p>')+'</div>';
-if(ce||ho)h+='<div class="card k-night"><h3>🌙 Esta noche</h3>'+(ce?'<p><b>'+ce.what+'</b>'+(ce.res?' · Reserva: '+(done(ce.todo)?'hecha':ce.res):'')+'</p>':'')+(ho?'<p class="mu">Alojamiento: '+ho.n+'</p>':'')+'</div>';
-h+='<div class="card" id="wx"><h3>Tiempo</h3><p class="mu">Cargando…</p></div>'+(day.tiempo&&day.tiempo.length?'<div class="card"><h3>Previsión oficial</h3>'+tq(day.tiempo)+'</div>':'')+act(n.d).filter(a=>a.day===day.id).map(al).join('')}
-else h+='<div class="hero" data-g="'+G('🎉')+'"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
-el.innerHTML=h;toggles(el);if(day&&c<=0)wx(day)}
-async function wx(day){const box=$('#wx'),p=PL(day.base);if(!box||!p)return;let o=null;
-try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude='+p.lat+'&longitude='+p.lng+'&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone='+encodeURIComponent(TZ)+'&forecast_days=7');o=await r.json();o.ts=new Date().toISOString();ls.s('wx',JSON.stringify(o))}catch(e){try{o=JSON.parse(ls.g('wx'))}catch(x){}}
-if(!o||!o.daily){box.innerHTML='<h3>Tiempo</h3><p class="mu">Sin datos (sin red y sin lectura guardada).</p>';return}
-const i=o.daily.time.indexOf(day.date);box.innerHTML='<h3>Tiempo</h3>'+(i<0?'<p class="mu">Sin previsión para hoy en la última lectura.</p>':'<p><b>'+Math.round(o.daily.temperature_2m_min[i])+'° / '+Math.round(o.daily.temperature_2m_max[i])+'°</b> · lluvia '+o.daily.precipitation_probability_max[i]+' %</p>')+'<p class="mu">Última lectura: '+new Date(o.ts).toLocaleString('es-ES',{timeZone:TZ})+' (Open-Meteo)</p>'}
+const stats='<div class="stats"><span>'+T.days.length+' días</span>'+(km?'<span>'+km+' km</span>':'')+'<span>'+okb+'/'+T.bookings.length+' reservas</span><span>'+op.length+' pendientes</span></div>';
+const day=T.days.find(d=>d.date===n.d),ended=n.d>M.end;
+let h=hd();
+if(c>0)h+='<div class="hero" data-g="'+G('🧳')+'"><b>'+c+'</b>días para el viaje'+stats+'</div>';
+else if(ended)h+='<div class="hero" data-g="'+G('🎉')+'"><b>Fin</b>Viaje terminado: convierte esta web en diario y retira los datos personales.'+stats+'</div>';
+else{const k=T.days.findIndex(d=>d.date===n.d)+1;h+='<div class="hero" data-g="'+G('☀️')+'"><b>'+(k?'Día '+k+' de '+T.days.length:'En viaje')+'</b>'+(day?day.title:'')+stats+'</div>'}
+if(day&&c<=0&&!ended){const nx=day.items.find(i=>{const m=/(\d\d:\d\d)/.exec(itemT(day,i));return m&&m[1]>=n.t}),ce=day.items.find(i=>i.meal==='cena'),ho=hotelOn(n.d),k0=(day.tiempo||[])[0];
+h+='<div class="card k-next"><h3>⏭️ Ahora</h3>'+(nx?'<p><span class="t">'+itemT(day,nx)+'</span> <b>'+nx.what+'</b></p>'+(nx.note?'<p class="mu">'+tk(nx.note,day.date,nx.blue||day.base)+'</p>':''):'<p>Día completado.</p>')+(ce?'<p class="mu">🌙 '+ce.what+(estOf(ce)?' · '+estOf(ce)[0]:'')+'</p>':'')+(ho?'<p class="mu">🏨 '+ho.n+'</p>':'')+(k0?'<p class="mu" data-wxnow="'+k0+'|'+day.date+'">Cargando tiempo…</p>':'')+'</div>'}
+h+='<div class="card"><h3>🧭 Itinerario</h3><ul class="l itin">'+T.days.map(d=>'<li><a href="#d-'+d.id+'"'+(d.date===n.d?' aria-current="date"':'')+'>'+d.title+'</a></li>').join('')+'</ul></div>';
+const tk0=Object.keys(T.tiempo);if(tk0.length){const ref=(c>0?M.start:day?day.date:M.start);h+='<div class="card"><h3>Tiempo</h3>'+tq(tk0,ref)+'</div>'}
+const al0=act(n.d).filter(a=>a.lvl!=='info');if(al0.length)h+='<h2>Atención</h2>'+al0.map(al).join('');
+h+='<h2>Pendientes</h2>'+(op.length?op.map(t=>pend(t,diff(n.d,t.due))).join(''):'<p class="mu">Nada pendiente.</p>');
+el.innerHTML=h;wireTheme();wxLoad()}
 /* ── Días ── */
 function itemT(d,i){if(i.t)return i.t;const u=i.blue&&sun(d.date,i.blue);return u?u.b1:'—'}
-function dias(){const n=now();let h='<h1>Días</h1><div class="chips daynav">'+T.days.map(d=>'<a class="btn" href="#d-'+d.id+'">'+d.title+'</a>').join('')+'</div>';
-T.days.forEach(d=>{const u=sun(d.date,d.base);h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p>'+sunB(u)+'<div class="card"><p class="mu">📷 '+d.lens+'</p>'+(d.photo?'<p class="mu">'+d.photo+'</p>':'')+(d.tiempo&&d.tiempo.length?tq(d.tiempo):'')+'</div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
+const dayActs=d=>MOD.actividades===false?[]:T.actividades.filter(a=>[].concat(a.dia||[]).includes(d.id));
+function dias(){const n=now();let h='<h1>Días</h1><div class="chips daynav">'+T.days.map(d=>'<a class="btn" href="#d-'+d.id+'"'+(d.date===n.d?' aria-current="date"':'')+'>'+dshort(d)+'</a>').join('')+'</div>';
+T.days.forEach(d=>{const u=sun(d.date,d.base),ac=dayActs(d);h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p>'+sunB(u);
+if(ac.length)h+='<details class="learn ideas"><summary>🎈 Ideas del día · '+ac.length+'</summary><div class="lb">'+ac.map(a=>'<div class="idea"><b>'+a.n+'</b> <span class="chip '+(a.estado==='elegida'?'c-ok':'')+'">'+(a.estado==='elegida'?'elegida':'sugerencia')+'</span><p>'+a.why+'</p><p class="mu">Coste: '+a.coste+' · Tiempo: '+a.tiempo+' · Reserva: '+a.reserva+' · Dificultad: '+a.dificultad+'</p><small>Fuente: <a href="'+a.url+'" target="_blank" rel="noopener">'+a.src+'</a> · verificado '+a.ver+'</small></div>').join('')+'</div></details>';
+h+='<div class="card"><p class="mu">📷 '+d.lens+'</p>'+(d.photo?'<p class="mu">'+d.photo+'</p>':'')+(d.tiempo&&d.tiempo.length?tq(d.tiempo,d.date):'')+'</div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
 h+='<ol class="tl">'+d.items.map(i=>{const sid=i.blue||d.base;let x='<li class="'+(i.star?'star':'')+'" data-i="'+ico(i)+'"><div class="it"><span class="t">'+itemT(d,i)+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'')+(i.dur?' <span class="chip">'+i.dur+' min</span>':'');
 if(i.note)x+='<p class="mu">'+tk(i.note,d.date,sid)+'</p>';
 if(i.blue){const b=sun(d.date,i.blue);if(b)x+='<p class="mu">'+sunH(b)+'</p>'}
-if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n+rk(r)}).join(' · ')+'</p>';
-/* AJUSTE JAÉN: solo las reservas llevan etiqueta; el resto de pendientes vive en Hoy e Info */
-if(i.todo&&i.res){const dn=done(i.todo);x+='<p><span class="chip '+(dn?'c-ok':'c-warn')+'">Reserva: '+(dn?'hecha':i.res)+'</span></p>'}
-if(i.place)x+='<div class="row">'+lnk(PL(i.place))+'</div>';
+if(i.meal&&i.opts&&i.opts.length)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r?r.n+rk(r):id}).join(' · ')+'</p>';
+if(i.mapa&&i.place)x+=lnk(PL(i.place));
 [i.learn,i.learn2].filter(Boolean).forEach(k=>{const L=T.learn[k];x+='<details class="learn"><summary>Saber más · '+L.t+'</summary><div class="lb"><p>'+L.sum+'</p><ul>'+L.cur.map(c=>'<li>'+c+'</li>').join('')+'</ul><small>Fuente: <a href="'+L.url+'" target="_blank" rel="noopener">'+L.src+'</a> · verificado '+L.ver+'</small></div></details>'});
+const es=estOf(i);if(es)x+='<p class="est"><span class="chip '+es[1]+'">'+es[0]+'</span></p>';
 return x+'</div></li>'}).join('')+'</ol>';
 if(d.last)h+='<div class="card"><b>'+d.last.x+':</b> '+(d.last.t?d.last.t+' <span class="mu">(verificado '+d.last.v+')</span>':'<span class="chip c-warn">por verificar</span>')+'</div>';
 h+='<div class="card"><b>Plan B:</b> '+d.planB+'</div>'});
-if(MOD.actividades&&(T.actividades||[]).length){h+='<h2>Planes divertidos y curiosos</h2><p class="mu">Elige 1–2; los elegidos entran en el horario del día.</p>'+T.actividades.map(a=>'<div class="card"><b>'+a.n+'</b> <span class="chip '+(a.estado==='elegida'?'c-ok':'')+'">'+(a.estado||'propuesta')+'</span><p>'+a.why+'</p><p class="mu">Coste: '+a.coste+' · Tiempo: '+a.tiempo+' · Reserva: '+a.reserva+' · Dificultad: '+a.dificultad+'</p><small class="mu">Fuente: <a href="'+a.url+'" target="_blank" rel="noopener">'+a.src+'</a> · verificado '+a.ver+'</small></div>').join('')}
 $('#dias').innerHTML=h}
 /* ── Comer ── */
 let flt='todos';
 function comer(){const F=T.food||{},D=T.diet,cs=['todos'].concat([...new Set((F.rest||[]).map(r=>r.d))]);let h='<h1>Comer</h1>';
 if(MOD.dieta&&D){h+='<h2>Enséñasela al camarero</h2><div class="wait" lang="'+D.lang+'">'+D.tarjeta.loc+'<small>'+D.tarjeta.es+'</small></div><h3>Frases</h3>'+D.frases.map(f=>'<div class="card"><b lang="'+D.lang+'">'+f.loc+'</b><p class="mu">'+f.es+'</p></div>').join('')+'<h3>Evitar</h3><ul class="l">'+D.evitar.map(x=>'<li>'+x+'</li>').join('')+'</ul><h3>Seguro</h3><ul class="l">'+D.seguro.map(x=>'<li>'+x+'</li>').join('')+'</ul><p class="mu">Alergia al trigo; la contaminación cruzada no es problema. '+(D.nota||'')+'</p>'}
 h+='<h2>Platos típicos</h2><p class="mu">Lo más habitual de la zona. Verificado '+F.ver+'.</p>'+(F.tipicos||[]).map(p=>'<div class="card"><b>'+p.n+'</b>'+(MOD.dieta&&p.dieta?' <span class="chip '+RK[p.dieta]+'">'+p.dieta[0].toUpperCase()+p.dieta.slice(1)+'</span>':'')+'<p>'+p.d+'</p><small class="mu">Fuente: <a href="'+p.url+'" target="_blank" rel="noopener">'+p.src+'</a></small></div>').join('');
-h+='<h2>Restaurantes</h2><p class="mu">'+(MOD.dieta?'Etiqueta y fecha de verificación en cada ficha; lo no verificado, confírmalo por teléfono.':'Horarios y menús sin verificar: llama antes de ir.')+'</p><div class="chips">'+cs.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
-h+=(F.rest||[]).filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip">'+r.d+'</span>'+rk(r)+(r.note?'<p>'+r.note+'</p>':'')+(MOD.dieta?'<p class="mu">Verificado: '+(r.v||'pendiente')+'</p>':'')+'<div class="row">'+A(maps(r),'Mapa')+(r.tel?'<a class="btn" href="tel:'+r.tel+'">Llamar</a>':'')+'</div></div>').join('');
+h+='<h2>Restaurantes</h2><p class="mu">'+(MOD.dieta?'Etiqueta y fecha de verificación en cada ficha; lo no verificado, confírmalo con el local.':'Horarios y menús sin verificar: confírmalos antes de ir.')+'</p><div class="chips">'+cs.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
+h+=(F.rest||[]).filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip">'+r.d+'</span>'+rk(r)+'<p>'+(r.desc||r.note||'')+'</p>'+(MOD.dieta?'<p class="mu">Verificado: '+(r.v||'pendiente')+'</p>':'')+'</div>').join('');
 if(MOD.supermercado&&D&&D.super)h+='<h2>Supermercado</h2><div class="card"><p>'+D.super+'</p></div>';
 const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()})}
-/* ── Reservas ── */
-function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>{const s=ST[b.st],p=b.place&&PL(b.place);return '<div class="card"><b>'+b.n+'</b> <span class="chip '+s[1]+'">'+s[0]+'</span><p class="mu">'+b.tipo+' · '+b.when+'</p>'+(b.dir?'<p>'+b.dir+'</p>':'')+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+'</p>'+(p?'<div class="row">'+lnk(p)+'</div>':'')+'</div>'}).join('');
-if(MOD.coche&&T.coche)h+='<h2>Coche</h2><div class="card"><b>'+T.coche.n+'</b><p>'+T.coche.txt+'</p><div class="row">'+lnk(PL(T.coche.place))+'</div></div>';
+/* ── Reservas (único sitio con mapa, llamar y horarios) ── */
+function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>{const s=ST[b.st],p=b.place&&PL(b.place);return '<div class="card"><b>'+b.n+'</b> <span class="chip '+s[1]+'">'+s[0]+'</span>'+cargaChip(b)+'<p class="mu">'+b.tipo+' · '+b.when+'</p>'+(b.dir?'<p>'+b.dir+'</p>':'')+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+(b.tipo==='Hotel'&&!(p&&p.tel)?' · teléfono pendiente':'')+'</p>'+(p?lnk(p):'')+'</div>'}).join('');
+const v=veh();if(v)h+='<h2>Coche</h2><div class="card"><b>'+v.n+'</b> <span class="chip '+(T.coche.vehiculo==='tesla'?'c-warn':'')+'">⚡ Carga: '+v.carga+'</span><p>'+T.coche.txt+'</p>'+(T.coche.place&&PL(T.coche.place)?lnk(PL(T.coche.place)):'')+'</div>';
+else if(MOD.coche&&T.coche)h+='<h2>Coche</h2><div class="card"><b>'+T.coche.n+'</b><p>'+T.coche.txt+'</p>'+(T.coche.place&&PL(T.coche.place)?lnk(PL(T.coche.place)):'')+'</div>';
 h+='<p class="mu">Localizadores y datos personales: en tu correo o Wallet (esta web es pública).</p>';$('#reservas').innerHTML=h}
 /* ── Info ── */
 function audit(){const o=[],D=T.days,wk=['domingo','lunes','martes','miércoles','jueves','viernes','sábado'],lead=/(hora azul|puesta)[^.]{0,24}\d\d:\d\d/i;
 if(D[0].date!==M.start)o.push('El primer día no coincide con el inicio del viaje');
 if(D[D.length-1].date!==M.end)o.push('El último día no coincide con el fin del viaje');
+if(!(M.lugares&&M.lugares.length))o.push('Falta meta.lugares (subtítulo de Inicio)');
 D.forEach(d=>{if(d.date<M.start||d.date>M.end)o.push(d.title+': fecha fuera del viaje');
-const w=d.title.toLowerCase().split(/\s/)[0],wi=new Date(d.date+'T12:00:00Z').getUTCDay();if(wk.includes(w)&&wk[wi]!==w)o.push(d.title+': no es '+w+' el '+d.date);
+const w=d.title.toLowerCase().split(/[\s]/)[0],wi=new Date(d.date+'T12:00:00Z').getUTCDay();if(wk.includes(w)&&wk[wi]!==w)o.push(d.title+': no es '+w+' el '+d.date);
+if(d.title.indexOf(' - ')<0)o.push(d.title+': el título debe ser «Día n - lugares o actividades»');
 if(!PL(d.base)||PL(d.base).lat==null)o.push(d.title+': falta lugar base con lat/lng (hora azul)');
 d.items.forEach(i=>{['place','blue'].forEach(k=>{if(i[k]&&!PL(i[k]))o.push(d.title+': lugar inexistente «'+i[k]+'»')});
 [i.learn,i.learn2].filter(Boolean).forEach(k=>{const L=T.learn[k];if(!L)o.push(d.title+': Saber más inexistente «'+k+'»');else if(!L.src||!L.url||!L.ver)o.push('Saber más «'+k+'» sin fuente o fecha')});
 (i.opts||[]).forEach(id=>{if(!rest(id))o.push(d.title+': restaurante inexistente «'+id+'»')});
+if(i.est&&!EST[i.est])o.push(d.title+': estado de comida no válido «'+i.est+'»');
 if(i.todo&&!T.todos.find(t=>t.id===i.todo))o.push(d.title+': pendiente inexistente «'+i.todo+'»');
-if(i.act&&!(T.actividades||[]).find(a=>a.id===i.act))o.push(d.title+': actividad inexistente «'+i.act+'»');
+if(i.act&&!T.actividades.find(a=>a.id===i.act))o.push(d.title+': actividad inexistente «'+i.act+'»');
 const tx=(i.what||'')+' '+(i.note||'');if(lead.test(tx))o.push(d.title+': hora azul/puesta escrita a mano en «'+i.what+'»');
 if(/\{(rise|set|b1|b2)\}/.test(tx)&&!sun(d.date,i.blue||d.base))o.push(d.title+': hora azul sin coordenadas en «'+i.what+'»')});
 if(d.last&&!d.last.t)o.push(d.title+': último transporte sin verificar');
 if(d.last&&d.last.t){const u=sun(d.date,d.base);if(u&&u.b2>d.last.t)o.push(d.title+': el último transporte ('+d.last.t+') sale antes del fin de la hora azul ('+u.b2+'): revisa')}});
-T.todos.forEach(t=>{if(!t.due)o.push('Pendiente sin fecha límite: '+t.id);if(t.day){const d=D.find(x=>x.id===t.day);if(!d||!d.items.some(i=>i.todo===t.id))o.push('Pendiente que no está en el horario: '+t.id)}});
+T.todos.forEach(t=>{if(!t.due)o.push('Pendiente sin fecha límite: '+t.id);if(t.day&&!t.hecho){const d=D.find(x=>x.id===t.day);if(!d||!d.items.some(i=>i.todo===t.id))o.push('Pendiente que no está en el horario: '+t.id)}});
 T.alerts.forEach(a=>{if(lead.test(a.msg))o.push('Aviso con hora azul/puesta escrita a mano: '+a.msg.slice(0,40)+'…');if(!a.until)o.push('Aviso sin fecha de fin: '+a.msg.slice(0,40)+'…');if(!a.verified)o.push('Aviso sin verificar: '+a.msg.slice(0,48)+'…')});
+if(MOD.coche&&T.coche&&!VEH[T.coche.vehiculo])o.push('Coche: falta coche.vehiculo (tesla, bmw u otro)');
 T.bookings.filter(b=>b.tipo==='Hotel'&&b.in).forEach(b=>{if(b.st!=='ok'&&b.st!=='ver')o.push('Hotel sin confirmar: '+b.n);if(/no verificado|por verificar/i.test(b.check||''))o.push('Check-in/out sin verificar: '+b.n);
+if(MOD.coche&&T.coche&&T.coche.vehiculo==='tesla'&&b.cargador!=='si')o.push('Tesla: hotel sin cargador confirmado: '+b.n);
 const di=D.find(d=>d.date===b.in),dout=D.find(d=>d.date===b.out);if(!di||!di.items.some(i=>i.in))o.push('Falta el check-in en el horario: '+b.n);if(!dout||!dout.items.some(i=>i.out))o.push('Falta el check-out en el horario: '+b.n)});
-if(MOD.dieta)((T.food||{}).rest||[]).forEach(r=>{if(!r.v)o.push('Restaurante sin verificar: '+r.n)});
-(T.actividades||[]).filter(a=>a.estado==='elegida').forEach(a=>{if(!D.some(d=>d.items.some(i=>i.act===a.id)))o.push('Actividad elegida que no está en el horario: '+a.n)});
+((T.food||{}).rest||[]).forEach(r=>{if(!r.desc)o.push('Restaurante sin descripción (comida y ambiente): '+r.n);if(MOD.dieta&&!r.v)o.push('Restaurante sin verificar: '+r.n)});
+T.actividades.forEach(a=>{if(!a.dia)o.push('Actividad sin día asignado: '+a.n);else if(a.estado==='elegida'&&!D.some(d=>d.items.some(i=>i.act===a.id)))o.push('Actividad elegida que no está en el horario: '+a.n)});
 return o}
-function info(){let h='<h1>Info</h1><h2>Pendientes y checklist</h2>'+T.todos.slice().sort((a,b)=>a.due<b.due?-1:1).map(t=>chk(t)).join('');
-Object.entries(T.check||{}).forEach(([g,a])=>{h+='<h3>'+g+'</h3>'+a.map((x,i)=>'<label class="todo"><input type="checkbox" data-id="k'+g+i+'" '+(done('k'+g+i)?'checked':'')+'><span>'+x+'</span></label>').join('')});
-h+='<h2>Fotos y rutas</h2><div class="scroll"><table><tr><th>Día</th><th>Puesta</th><th>Hora azul</th></tr>'+T.days.map(d=>{const s=sun(d.date,d.base);return '<tr><td>'+d.title+(s?' ('+s.lugar+')':'')+'</td><td>'+(s?s.set:'—')+'</td><td>'+(s?s.b1+'–'+s.b2:'—')+'</td></tr>'}).join('')+'</table></div><p class="mu">Calculado en el móvil por coordenadas y fecha (hora local de '+TZ+'): puesta a −0,833°, hora azul entre −4° y −8°.</p><div class="row">'+T.days.map(d=>{const ids=[...new Set(d.items.map(i=>i.place).filter(Boolean))];return ids.length>1?A(dirU(ids),'Ruta '+d.title):''}).join('')+'</div>';
+const cid=(g,x,i)=>typeof x==='object'?x.id:'h'+hs(x);
+const ctx=x=>typeof x==='object'?x.t:x;
+const cdone=(g,x,i)=>ls.g('c:'+cid(g,x,i))==='1'||(typeof x!=='object'&&ls.g('t:k'+g+i)==='1');
+function info(){let h='<h1>Info</h1><h2>Pendientes</h2><p class="mu">Se cierran en el chat del viaje, no aquí.</p>'+(openT().length?openT().map(t=>pend(t,diff(now().d,t.due))).join(''):'<p class="mu">Nada pendiente.</p>');
+h+='<h2>Checklist</h2><p class="mu">Se guarda en este dispositivo y se conserva al actualizar la web.</p>';
+Object.entries(T.check||{}).forEach(([g,a])=>{h+='<h3>'+g+'</h3>'+a.map((x,i)=>'<label class="todo"><input type="checkbox" data-c="'+cid(g,x,i)+'" '+(cdone(g,x,i)?'checked':'')+'><span>'+ctx(x)+'</span></label>').join('')});
+h+='<h2>Fotos</h2><div class="scroll"><table><tr><th>Día</th><th>Puesta</th><th>Hora azul</th></tr>'+T.days.map(d=>{const s=sun(d.date,d.base);return '<tr><td>'+dshort(d)+'</td><td>'+(s?s.set:'—')+'</td><td>'+(s?s.b1+'–'+s.b2:'—')+'</td></tr>'}).join('')+'</table></div><p class="mu">Calculado en el móvil por coordenadas y fecha (hora local de '+TZ+'): puesta a −0,833°, hora azul entre −4° y −8°.</p>';
 h+='<h2>Utilidades</h2>'+(Object.keys(T.tiempo).length?'<h3>Tiempo (servicio oficial)</h3>'+Object.keys(T.tiempo).map(k=>{const c=T.tiempo[k];return '<p><b>'+c.n+'</b> · <a href="'+c.url+'" target="_blank" rel="noopener">previsión</a>'+(c.horas?' · <a href="'+c.horas+'" target="_blank" rel="noopener">por horas</a>':'')+'</p>'}).join(''):'')+'<h3>Enlaces</h3>'+T.links.map(l=>'<p><a href="'+l.u+'" target="_blank" rel="noopener">'+l.n+'</a></p>').join('')+'<h3>SOS (funciona sin red)</h3><div class="row">'+T.sos.map(s=>'<a class="btn fill" href="tel:'+s.tel+'">'+s.n+' '+s.tel+'</a>').join('')+'</div>';
 const au=audit();h+='<h3>Comprobaciones automáticas</h3>'+(au.length?'<ul class="l">'+au.map(x=>'<li>'+x+'</li>').join('')+'</ul>':'<p class="mu">Sin incidencias.</p>');
-const el=$('#info');el.innerHTML=h;toggles(el)}
+const el=$('#info');el.innerHTML=h;el.querySelectorAll('input[data-c]').forEach(i=>i.onchange=()=>ls.s('c:'+i.dataset.c,i.checked?'1':'0'))}
 /* ── Pie, tema, arranque ── */
 const R=document.documentElement,eff=()=>R.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
 {const t=ls.g('theme');if(t)R.dataset.theme=t}
-function foot(){$('#foot').innerHTML='<p>'+M.title+' · v'+M.ver+' · '+M.built+' · motor '+TPL+'</p><p>'+M.log+'</p><div class="row"><button class="btn" id="thm">Tema claro/oscuro</button></div>';
-$('#thm').onclick=()=>{const n=eff()==='dark'?'light':'dark';R.dataset.theme=n;ls.s('theme',n)}}
-function render(){inicio();dias();comer();reservas();info()}
-function show(){const t=(location.hash||'#inicio').slice(1);const id=['inicio','dias','comer','reservas','info'].includes(t)?t:(t.startsWith('d-')?'dias':'inicio');$$('.sec').forEach(s=>s.classList.toggle('on',s.id===id));$$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));if(t.startsWith('d-')){const e=document.getElementById(t);if(e)e.scrollIntoView()}else window.scrollTo(0,0)}
-$$('nav.tabs button').forEach(b=>b.onclick=()=>{location.hash='#'+b.dataset.t});
-document.addEventListener('toggle',e=>{if(e.target.matches&&e.target.matches('details.learn')&&e.target.open)$$('details.learn[open]').forEach(d=>{if(d!==e.target)d.open=false})},true);
+function wireTheme(){const b=$('#thm');if(b)b.onclick=()=>{const n=eff()==='dark'?'light':'dark';R.dataset.theme=n;ls.s('theme',n);b.textContent=n==='dark'?'☀️':'🌙'}}
+function foot(){$('#foot').innerHTML='<p>'+M.title+' · v'+M.ver+' · '+M.built+' · motor '+TPL+'</p>'}
+function render(){inicio();dias();comer();reservas();info();wxPaint()}
+function show(){const t=(location.hash||'#inicio').slice(1);const id=['inicio','dias','comer','reservas','info'].includes(t)?t:(t.startsWith('d-')?'dias':'inicio');$$('.sec').forEach(s=>s.classList.toggle('on',s.id===id));$$('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));
+if(t.startsWith('d-')){const e=document.getElementById(t);if(e)e.scrollIntoView()}
+else if(id==='dias'){const n=now(),cur=T.days.find(d=>d.date===n.d),e=cur&&document.getElementById('d-'+cur.id);if(e)e.scrollIntoView();else window.scrollTo(0,0)}
+else window.scrollTo(0,0)}
+$$('nav.tabs button').forEach(b=>b.onclick=()=>{if(location.hash==='#'+b.dataset.t)show();else location.hash='#'+b.dataset.t});
+document.addEventListener('toggle',e=>{if(e.target.matches&&e.target.matches('details.learn')&&e.target.open)$$('details.learn[open]').forEach(d=>{if(d!==e.target&&d.parentNode===e.target.parentNode)d.open=false})},true);
 addEventListener('hashchange',show);render();foot();show();
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js?v='+encodeURIComponent(M.ver)+'&s='+encodeURIComponent(M.slug)).catch(()=>{}));
 })();
