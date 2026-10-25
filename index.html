@@ -120,7 +120,7 @@ details.ideas{border-style:dashed;border-color:var(--ac)}
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.8',built:'2026-10-25',log:'v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.9',built:'2026-10-25',log:'v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
@@ -135,7 +135,6 @@ days:[
 {id:'vie',date:'2026-11-20',base:'parador',title:'Viernes 20 - Madrid y llegada a Jaén',note:'Viaje y llegada tranquila.',tiempo:['jaen'],
 lens:'Sigma 18-50 f/2.8 (noche). RF 18-150 y RF 100-400: no hacen falta hoy.',planB:'Si llegas después de las 22:00, avisa al Parador para asegurar la cena.',
 items:[
-{t:'Mañana',what:'Antes de salir: maleta hecha, baterías cargadas y mapas offline',k:'🧳',todo:'maleta'},
 {t:'Tarde',what:'Madrid → Jaén',k:'🚗',km:335,place:'charger',note:'≈3 h 15 min sin contar la carga (tu estimación). Standard Range: para a cargar donde te indique el coche (navegación de Tesla).'},
 {t:'~21:00',what:'Llegada y check-in en el Parador de Jaén',in:1,place:'parador',learn:'castillo',todo:'cargador',note:'Conecta el coche al cargador del Parador o carga en el Supercharger de Jaén Plaza.'},
 {t:'Cena',what:'Cena en el Parador o en taxi al centro',meal:'cena',opts:['parador','gorrion','manchega','mangas'],est:'pendiente',todo:'cena-vie',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan).'}]},
@@ -172,7 +171,7 @@ bookings:[
 {id:'almazara',tipo:'Visita',n:'Oleícola San Francisco',st:'ok',when:'sáb 21 · 9:45-12:45',dir:'C/ Pedro Pérez s/n, Begíjar',cancel:'ver correo',place:'oleicola'},
 {id:'civitatis',tipo:'Visita guiada',n:'Civitatis: Catedral, Búnker y Baños Árabes',st:'ok',when:'dom 22 · 10:30-13:00',dir:'Punto de encuentro: por confirmar',cancel:'ver Civitatis',place:'banos'},
 {id:'parador',tipo:'Hotel',n:'Parador de Jaén',st:'ver',when:'vie 20 → dom 22',in:'2026-11-20',out:'2026-11-22',cargador:'ver',dir:'Castillo de Santa Catalina s/n, Jaén',check:'Check-in/out: ver confirmación (no verificado)',cancel:'ver correo/Wallet',place:'parador'}],
-coche:{vehiculo:'tesla',n:'Tesla Model 3 Standard Range',txt:'Madrid-Jaén ≈335 km. Para a cargar donde te indique el coche. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.',place:'charger'},
+coche:{vehiculo:'tesla',n:'Tesla Model 3 Standard Range',txt:'Madrid-Jaén ≈335 km. Para a cargar donde te indique el coche. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.'},
 food:{ver:'2026-10-25',
 tipicos:[
 {n:'Andrajos',d:'Guiso de invierno con tortas finas de harina que se rompen en el caldo, sobre un sofrito de tomate, pimiento, cebolla y ajo. Lleva conejo o bacalao; el de bacalao se asocia a Úbeda y Baeza.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
@@ -205,7 +204,6 @@ catedral:{t:'Catedral de Jaén',sum:'Nació sobre una antigua mezquita. Vandelvi
 banos:{t:'Baños Árabes de Jaén',sum:'Del siglo XI y con unos 450 m², son probablemente los mayores baños árabes visitables de España.',cur:['A finales del siglo XVI el conde de Villardompardo, virrey del Perú, edificó su palacio encima y los ocultó.','Una pequeña parte reapareció en 1913 durante un inventario de monumentos.'],src:'Jaén Paraíso Interior',url:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes',ver:'2026-10-25'},
 castillo:{t:'Castillo de Santa Catalina y Parador',sum:'Fortaleza musulmana del siglo VIII sobre el cerro; Fernando III tomó Jaén en 1246 y mandó construir el Castillo Nuevo.',cur:['El Parador se levantó en 1965 (diseño de José Luis Picardo) y destruyó parte del castillo antiguo.','Una gran cruz en lo alto recuerda la que hizo erigir Fernando III.'],src:'Wikipedia',url:'https://en.wikipedia.org/wiki/Castle_of_Santa_Catalina_(Ja%C3%A9n)',ver:'2026-10-25'}},
 todos:[
-{id:'maleta',t:'Hacer la maleta (cargar baterías de cámara y móvil; descargar mapas y reservas offline)',due:'2026-11-19',day:'vie'},
 {id:'cargador',t:'Confirmar con el Parador el cargador (cómo pedirlo, conector) o usar el Supercharger',due:'2026-11-13',day:'vie'},
 {id:'cena-vie',t:'Cena del viernes: reservar y avisar de llegada ~21:00',due:'2026-11-13',day:'vie'},
 {id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13',day:'dom',hecho:true},
@@ -279,8 +277,10 @@ const act=d=>T.alerts.filter(a=>a.until>=d);
 const LV={info:'Info',atencion:'Atención',critico:'Crítico'};
 const al=a=>{const d=T.days.find(x=>x.id===a.day);return '<div class="alert '+a.lvl+'"><b>'+LV[a.lvl]+':</b> '+md(d?tk(a.msg,d.date,d.base):a.msg)+'<small>Fuente: '+(a.url?'<a href="'+a.url+'" target="_blank" rel="noopener">'+a.src+'</a>':a.src)+' · '+(a.verified?'verificado '+a.verified:'sin verificar')+' · vigente hasta '+fd(a.until)+'</small></div>'};
 /* Pendientes: solo lectura. Se cierran en el chat del viaje (todo.hecho:true). */
-const openT=()=>T.todos.filter(t=>!t.hecho).sort((a,b)=>a.due<b.due?-1:1);
-const pend=(t,d)=>'<div class="pd"><span class="chip '+(d!=null&&d<0?'c-bad':d!=null&&d<=3?'c-warn':'')+'">'+(d!=null&&d<0?'vencido el ':'antes del ')+fd(t.due)+'</span> '+t.t+'</div>';
+/* AJUSTE JAÉN: pendientes en orden de viaje (día y parada), sin fechas, como checklist de solo lectura */
+const ordT=t=>{const di=T.days.findIndex(d=>d.id===t.day);if(di<0)return 1e6;const ii=T.days[di].items.findIndex(i=>i.todo===t.id);return di*1000+(ii<0?999:ii)};
+const openT=()=>T.todos.filter(t=>!t.hecho).sort((a,b)=>ordT(a)-ordT(b)||(a.due<b.due?-1:1));
+const pend=t=>'<label class="todo"><input type="checkbox" disabled aria-disabled="true"><span>'+t.t+'</span></label>';
 /* Checklist de maleta: casillas por dispositivo, con identificador estable (no depende de la versión de la web) */
 const hs=s=>{let h=5381;for(const c of String(s).toLowerCase().replace(/\s+/g,' ').trim())h=(h*33^c.charCodeAt(0))>>>0;return h.toString(36)};
 const RK={seguro:'c-ok',confirmar:'c-warn',evitar:'c-bad'};
