@@ -88,7 +88,7 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 </nav>
 <script>
 const TRIP={
-meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.1',built:'2026-10-25',log:'v1.1 (25-oct-2026): Saber más plegable por parada y atajos de día fijos.'},
+meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.2',built:'2026-10-25',log:'v1.2 (25-oct-2026): platos típicos en Comer; pendientes solo de reservas y sitios que lo necesitan.'},
 modules:{coche:true,conversores:false,super:true,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
@@ -119,10 +119,10 @@ items:[
 {t:'08:30',what:'Salida del Parador',km:42,note:'≈40 min; llegada hacia las 9:25.'},
 {t:'09:45',what:'Oleícola San Francisco (Begíjar)',star:1,place:'oleicola',learn:'olivar',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
 {t:'12:55',what:'Begíjar → Baeza',km:7,note:'≈10 min.'},
-{t:'13:00',what:'Baeza con luz',place:'baeza',learn:'patrimonio',todo:'cat-baeza',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
+{t:'13:00',what:'Baeza con luz',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
 {t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['andres','rincon'],res:'Pendiente',todo:'com-baeza'},
 {t:'15:30',what:'Baeza → Úbeda',km:10},
-{t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',todo:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
+{t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; horario por confirmar), Palacio de las Cadenas y Calle Real.'},
 {t:'17:20',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,place:'mirador',learn:'olivar',note:'Puesta 17:57. Quédate hasta ~18:30 (hora azul 18:15-18:26).'},
 {t:'18:30',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa']},
 {t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],res:'Pendiente',todo:'cena-sab'},
@@ -148,25 +148,26 @@ bookings:[
 {id:'parador',tipo:'Hotel',n:'Parador de Jaén',st:'ver',when:'vie 20 → dom 22',dir:'Castillo de Santa Catalina s/n, Jaén',check:'Check-in/out: ver confirmación (no verificado)',cancel:'ver correo/Wallet',place:'parador'}],
 coche:{n:'Coche propio (Tesla)',txt:'Madrid-Jaén ≈335 km. Supercharger Jaén Plaza: 12 puestos, hasta 250 kW, 24 h (Tesla, 25-oct-2026). Cargador del Parador: por confirmar.',place:'super'},
 food:{
-phrase:'Tengo alergia al trigo',
-alt:'No puedo comer nada con harina de trigo: pan, rebozados ni empanados.',
-card:'ALERGIA AL TRIGO\nNada con trigo ni harina de trigo: pan, rebozados, empanados, salsas espesadas, sémola.\nLa contaminación cruzada no es problema.\n¿Qué me recomienda sin trigo?',
-evitar:['Pan y migas','Rebozados, empanados y croquetas','Guisos y salsas espesadas con harina','Bollería, pestiños','Salmorejo y ajoblanco (suelen llevar pan)'],
-seguro:['Jamón y queso sin pan','Carne o pescado a la plancha, sin rebozar ni salsa','Huevos; patatas a lo pobre sin harina','Pipirrana, espárragos, ensaladas','Aceite de oliva virgen extra'],
-nota:'Lista general, no verificada por restaurante: pregunta siempre por salsas y fritura.',
-super:['Fruta, verdura, huevos, arroz, legumbres','Jamón y queso envasados (lee la etiqueta)','Aceite de oliva y frutos secos naturales','En etiquetas UE el trigo va resaltado: léelas siempre'],
+ver:'2026-10-25',
+tipicos:[
+{n:'Andrajos',d:'Guiso de invierno con tortas finas de harina que se rompen en el caldo, sobre un sofrito de tomate, pimiento, cebolla y ajo. Lleva conejo o bacalao; el de bacalao se asocia a Úbeda y Baeza.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
+{n:'Gachamiga',d:'Plato humilde de campo: harina, agua, sal, ajo y aceite de oliva, a veces con patatas fritas.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
+{n:'Ochíos',d:'Torta dulce de aceite de oliva virgen extra que se suele tomar con chocolate. También existe una versión salada, con pimentón y relleno de morcilla.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
+{n:'Ajoatao',d:'Salsa fría de ajo y aceite de oliva virgen extra, para acompañar carnes y pescados o para untar en pan tostado.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
+{n:'Pipirrana',d:'Ensalada fresquita típica del verano; en noviembre, pregunta si la tienen.',src:'Guías Viajar',url:'https://guias-viajar.com/turismo-espana/visitar-andalucia/jaen-sierras-cazorla-segura-gastronomia/'},
+{n:'Huevos moles',d:'Postre de huevo, leche y azúcar: natillas con merengue por encima, aromatizadas con canela y limón.',src:'Sensación Rural',url:'https://www.sensacionrural.es/blog/gastronomia-jaen/'},
+{n:'Aceite de oliva virgen extra',d:'El producto estrella de Jaén; lo normal es tomarlo mojado con pan.',src:'Guías Viajar',url:'https://guias-viajar.com/turismo-espana/visitar-andalucia/jaen-sierras-cazorla-segura-gastronomia/'}],
 rest:[
-{id:'parador',n:'Restaurante del Parador de Jaén',d:'jaen',lab:'Confirmar',q:'Parador de Jaén restaurante'},
-{id:'gorrion',n:'Casa Gorrión',d:'jaen',lab:'Confirmar',q:'Casa Gorrión, Jaén'},
-{id:'manchega',n:'La Manchega',d:'jaen',lab:'Confirmar',q:'La Manchega, Jaén'},
-{id:'mangas',n:'Mangas Verdes',d:'jaen',lab:'Confirmar',q:'Mangas Verdes, Jaén'},
-{id:'antonio',n:'Casa Antonio',d:'jaen',lab:'Confirmar',q:'Casa Antonio, Jaén'},
-{id:'andres',n:'Casa Andrés',d:'baeza',lab:'Confirmar',q:'Casa Andrés, Baeza'},
-{id:'rincon',n:'Rincón Baezano',d:'baeza',lab:'Confirmar',q:'Rincón Baezano, Baeza'},
-{id:'estacion',n:'Cantina La Estación',d:'ubeda',lab:'Confirmar',q:'Cantina La Estación, Úbeda'},
-{id:'cultural',n:'La Cultural',d:'ubeda',lab:'Confirmar',q:'La Cultural, Úbeda'},
-{id:'misa',n:'Misa de 12 (tapas)',d:'ubeda',lab:'Confirmar',q:'Misa de 12, Úbeda'}],
-ver:'sin verificar (menú y alergia al trigo): llama antes'},
+{id:'parador',n:'Restaurante del Parador de Jaén',d:'jaen',q:'Parador de Jaén restaurante'},
+{id:'gorrion',n:'Casa Gorrión',d:'jaen',q:'Casa Gorrión, Jaén'},
+{id:'manchega',n:'La Manchega',d:'jaen',q:'La Manchega, Jaén'},
+{id:'mangas',n:'Mangas Verdes',d:'jaen',q:'Mangas Verdes, Jaén'},
+{id:'antonio',n:'Casa Antonio',d:'jaen',q:'Casa Antonio, Jaén'},
+{id:'andres',n:'Casa Andrés',d:'baeza',q:'Casa Andrés, Baeza'},
+{id:'rincon',n:'Rincón Baezano',d:'baeza',q:'Rincón Baezano, Baeza'},
+{id:'estacion',n:'Cantina La Estación',d:'ubeda',q:'Cantina La Estación, Úbeda'},
+{id:'cultural',n:'La Cultural',d:'ubeda',q:'La Cultural, Úbeda'},
+{id:'misa',n:'Misa de 12 (tapas)',d:'ubeda',q:'Misa de 12, Úbeda'}]},
 learn:{
 olivar:{t:'El mar de olivos',sum:'Jaén es la provincia del olivar: el cultivo ocupa casi cuatro quintas partes de su superficie agrícola.',cur:['Más de 65 millones de olivos y cerca del 25 % del aceite del mundo, según El Debate (2024).','El olivo llegó a la península con los fenicios, hacia el 1100 a. C. (UPO, 2022); lo impulsaron después los romanos.'],src:'El Debate · UPO',url:'https://www.eldebate.com/espana/andalucia/20240307/jaen-tierra-olivo-hay-arboles-este-tipo-habitantes-toda-espana_177841.html',ver:'2026-10-25'},
 patrimonio:{t:'Baeza y Úbeda, Patrimonio Mundial',sum:'La UNESCO las inscribió en 2003 como ejemplos tempranos y excepcionales de arquitectura y urbanismo renacentistas del siglo XVI en España.',cur:['Andrés de Vandelvira fue el arquitecto principal del conjunto.','Según la UNESCO, sus modelos se difundieron hacia América Latina a través de publicaciones.'],src:'UNESCO, decisión 27 COM 8C.42',url:'https://whc.unesco.org/fr/decisions/737/',ver:'2026-10-25'},
@@ -177,13 +178,11 @@ castillo:{t:'Castillo de Santa Catalina y Parador',sum:'Fortaleza musulmana del 
 },
 todos:[
 {id:'cargador',t:'Confirmar con el Parador el cargador (cómo pedirlo, conector) o usar el Supercharger',due:'2026-11-13'},
-{id:'cena-vie',t:'Cena del viernes: reservar, avisar de llegada ~21:00 y de la alergia al trigo',due:'2026-11-13'},
+{id:'cena-vie',t:'Cena del viernes: reservar y avisar de llegada ~21:00',due:'2026-11-13'},
 {id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13'},
-{id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:00) y avisar de la alergia al trigo',due:'2026-11-10'},
+{id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:00)',due:'2026-11-10'},
 {id:'cena-sab',t:'Decidir y reservar cena del sábado: Úbeda o Parador',due:'2026-11-12'},
-{id:'com-dom',t:'Reservar comida del domingo en Jaén (13:00) y avisar de la alergia al trigo',due:'2026-11-12'},
-{id:'cat-baeza',t:'Comprobar si la Catedral de Baeza abre a mediodía el sábado',due:'2026-11-18'},
-{id:'sacra',t:'Comprobar el horario real de la Sacra Capilla del Salvador (sábado)',due:'2026-11-18'}],
+{id:'com-dom',t:'Reservar comida del domingo en Jaén (13:00)',due:'2026-11-12'}],
 links:[
 {n:'Baños Árabes de Jaén (horarios oficiales)',u:'https://www.jaenparaisointerior.es/en/w/ba%C3%B1os-arabes'},
 {n:'Supercharger Jaén Plaza (Tesla)',u:'https://www.tesla.com/findus/location/supercharger/299197'},
@@ -229,7 +228,7 @@ function dias(){const n=now();let h='<h1>Días</h1><div class="chips daynav">'+T
 T.days.forEach(d=>{h+='<h2 id="d-'+d.id+'">'+d.title+'</h2><p class="mu">'+d.note+'</p><div class="card"><p class="mu">'+sunH(T.sun[d.id])+'</p><p class="mu">📷 '+d.lens+'</p></div>'+act(n.d).filter(a=>a.day===d.id).map(al).join('');
 h+='<ol class="tl">'+d.items.map(i=>{let x='<li class="'+(i.star?'star':'')+'"><span class="t">'+i.t+'</span> <span class="what">'+(i.star?'⭐ ':'')+i.what+'</span>'+(i.opt?' <span class="opt">(opcional)</span>':'')+(i.km?' <span class="chip">'+i.km+' km</span>':'');
 if(i.note)x+='<p class="mu">'+i.note+'</p>';
-if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n+' <span class="chip c-warn">'+r.lab+'</span>'}).join(' · ')+'</p>'+(i.res?'<p><span class="chip c-warn">Reserva: '+i.res+'</span></p>':'');
+if(i.meal&&i.opts)x+='<p class="mu">'+i.opts.map(id=>{const r=rest(id);return r.n}).join(' · ')+'</p>'+(i.res?'<p><span class="chip c-warn">Reserva: '+i.res+'</span></p>':'');
 if(i.todo){const dn=done(i.todo);x+='<p><span class="chip '+(dn?'c-ok':'c-warn')+'">'+(dn?'✓ hecho':'pendiente')+'</span></p>'}
 if(i.place)x+='<div class="row">'+lnk(T.places[i.place])+'</div>';
 [i.learn,i.learn2].filter(Boolean).forEach(k=>{const L=T.learn[k];x+='<details class="learn"><summary>Saber más · '+L.t+'</summary><div class="lb"><p>'+L.sum+'</p><ul>'+L.cur.map(c=>'<li>'+c+'</li>').join('')+'</ul><small>Fuente: <a href="'+L.url+'" target="_blank" rel="noopener">'+L.src+'</a> · verificado '+L.ver+'</small></div></details>'});
@@ -238,13 +237,10 @@ h+='<div class="card"><b>Plan B:</b> '+d.planB+'</div>'});
 $('#dias').innerHTML=h}
 let flt='todos';
 function comer(){const F=T.food,ds=['todos','jaen','baeza','ubeda'];
-let h='<h1>Comer</h1><div class="card"><p class="mu">Enséñasela al camarero</p><p class="big">'+F.phrase+'</p><p>'+F.alt+'</p><div class="row"><button class="btn fill" id="card">Tarjeta grande</button></div></div>';
-h+='<h3>Evitar</h3><ul>'+F.evitar.map(x=>'<li>'+x+'</li>').join('')+'</ul><h3>Suele ser seguro</h3><ul>'+F.seguro.map(x=>'<li>'+x+'</li>').join('')+'</ul><p class="mu">'+F.nota+'</p>';
-h+='<h2>Restaurantes</h2><p class="mu">Verificación: '+F.ver+'.</p><div class="chips">'+ds.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
-h+=F.rest.filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip c-warn">'+r.lab+'</span><p class="mu">Verificado: pendiente</p><div class="row"><a class="btn" href="'+maps(r)+'" target="_blank" rel="noopener">Mapa</a></div></div>').join('');
-h+='<h2>Supermercado</h2><ul>'+F.super.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
-const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()});
-$('#card').onclick=()=>{const o=document.createElement('div');o.className='overlay';o.innerHTML='<div>'+F.card+'</div><button class="btn fill">Cerrar</button>';o.querySelector('button').onclick=()=>o.remove();document.body.appendChild(o)}}
+let h='<h1>Comer</h1><h2>Platos típicos</h2><p class="mu">Lo más habitual de la zona. Verificado '+F.ver+'.</p>'+F.tipicos.map(p=>'<div class="card"><b>'+p.n+'</b><p>'+p.d+'</p><small class="mu">Fuente: <a href="'+p.url+'" target="_blank" rel="noopener">'+p.src+'</a></small></div>').join('');
+h+='<h2>Restaurantes</h2><p class="mu">Horarios y menús sin verificar: llama antes de ir.</p><div class="chips">'+ds.map(d=>'<button class="btn" aria-pressed="'+(flt===d)+'" data-f="'+d+'">'+d[0].toUpperCase()+d.slice(1)+'</button>').join('')+'</div>';
+h+=F.rest.filter(r=>flt==='todos'||r.d===flt).map(r=>'<div class="card"><b>'+r.n+'</b> <span class="chip">'+r.d[0].toUpperCase()+r.d.slice(1)+'</span><div class="row"><a class="btn" href="'+maps(r)+'" target="_blank" rel="noopener">Mapa</a></div></div>').join('');
+const el=$('#comer');el.innerHTML=h;el.querySelectorAll('[data-f]').forEach(b=>b.onclick=()=>{flt=b.dataset.f;comer()})}
 function reservas(){let h='<h1>Reservas</h1>'+T.bookings.map(b=>'<div class="card"><b>'+b.n+'</b> <span class="chip '+(b.st==='ok'?'c-ok':'c-warn')+'">'+(b.st==='ok'?'Reservado':'Ver correo/Wallet')+'</span><p class="mu">'+b.tipo+' · '+b.when+'</p><p>'+b.dir+'</p>'+(b.check?'<p class="mu">'+b.check+'</p>':'')+'<p class="mu">Cancelación: '+b.cancel+'</p><div class="row">'+lnk(T.places[b.place])+'</div></div>').join('');
 if(T.modules.coche)h+='<h2>Coche</h2><div class="card"><b>'+T.coche.n+'</b><p>'+T.coche.txt+'</p><div class="row">'+lnk(T.places[T.coche.place])+'</div></div>';
 h+='<p class="mu">Localizadores y datos personales: en tu correo o Wallet (esta web es pública).</p>';$('#reservas').innerHTML=h}
