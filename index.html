@@ -42,9 +42,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{o
 .alert.atencion{border-color:var(--wn)}.alert.critico{border-color:var(--cr)}.alert.info{border-color:var(--ac)}
 .alert small{display:block;color:var(--mu);font-size:.9rem}
 ol.tl{list-style:none;margin:0;padding:0 0 0 4px;border-left:2px solid var(--ln)}
-ol.tl li{position:relative;padding:0 0 16px 18px}
-ol.tl li:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
-ol.tl li.star:before{background:var(--oil);border-color:var(--oil)}
+ol.tl>li{position:relative;padding:0 0 16px 18px}
+ol.tl>li:before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ac)}
+ol.tl>li.star:before{background:var(--oil);border-color:var(--oil)}
 .t{font-weight:700;color:var(--ac);font-variant-numeric:tabular-nums}
 .what{font-weight:600}
 .opt{color:var(--mu);font-weight:400}
@@ -57,7 +57,8 @@ details.learn summary::-webkit-details-marker{display:none}
 details.learn summary:before{content:'+';font-weight:700;width:1em}
 details.learn[open] summary:before{content:'−'}
 details.learn .lb{padding:0 12px 12px}
-details.learn ul{margin:6px 0;padding-left:18px}
+details.learn ul{margin:6px 0;padding-left:20px;list-style:disc}
+details.learn li{margin:6px 0;padding:0}
 details.learn small{display:block;color:var(--mu);font-size:.9rem}
 .chips .btn{white-space:nowrap}
 .big{font:700 1.7rem/1.25 Georgia,serif;margin:6px 0}
@@ -88,7 +89,7 @@ footer{margin-top:28px;color:var(--mu);font-size:.9rem}
 </nav>
 <script>
 const TRIP={
-meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.4',built:'2026-10-25',log:'v1.4 (25-oct-2026): sin etiquetas de pendiente duplicadas; la reserva de comidas se marca al tachar el pendiente.'},
+meta:{slug:'jaen2611',title:'Jaén',sub:'Viernes 20 a domingo 22 de noviembre de 2026',start:'2026-11-20',end:'2026-11-22',lat:37.7796,lng:-3.7849,ver:'1.5',built:'2026-10-25',log:'v1.5 (25-oct-2026): listas de Saber más con una sola viñeta.'},
 modules:{coche:true,conversores:false,super:true,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',q:'Parador de Jaén, Castillo de Santa Catalina, Jaén'},
