@@ -122,7 +122,7 @@ details.ideas{border-style:dashed;border-color:var(--ac)}
 <script>
 /* ═══ DATOS · única fuente de verdad (privacidad: web pública, sin localizadores ni datos personales) ═══ */
 const TRIP={
-meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.17',built:'2026-11-14',log:'v1.17 (14-nov-2026): motor 3.3.6 (versión en Inicio, iconos con ?v=slug), sin pendiente ni aviso de check-in/out del Parador, punto de encuentro de Civitatis (Catedral), carga en el Supercharger de Jaén (sin depender del Parador), Canela en Rama y Palacio de Gallego en Baeza, horario de domingo de los Baños Árabes corregido. v1.16 (8-nov-2026): Aparcamiento gratuito de La Alcantarilla como opción para la cena del viernes (Saber más). v1.15 (25-oct-2026): Retirado el aviso de la Sacra Capilla (horario oficial 9:30-19:00 confirmado). v1.14 (25-oct-2026): Motor 3.3.5 de la plantilla (sin el desplegable de previsión en Inicio). v1.13 (25-oct-2026): Motor 3.3.4 de la plantilla (sustituye los ajustes propios de Jaén); retirado el aviso de la misa de la Catedral (confirmado). v1.12 (25-oct-2026): Banner de Inicio compacto (número y texto en una línea, cifras en una fila de chips). v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
+meta:{slug:'jaen2611',title:'Escapada a Jaén',lugares:['Jaén','Baeza','Úbeda'],start:'2026-11-20',end:'2026-11-22',glifo:'🫒',tz:'Europe/Madrid',ver:'1.18',built:'2026-11-14',log:'v1.18 (14-nov-2026): comida del sábado reservada en el Palacio de Gallego (Canela en Rama, opción B); cuatro sitios de tapeo para la cena de Úbeda; Ni un Alfiler Taberna Atelier como sugerencia para la cena del viernes. v1.17 (14-nov-2026): motor 3.3.6 (versión en Inicio, iconos con ?v=slug), sin pendiente ni aviso de check-in/out del Parador, punto de encuentro de Civitatis (Catedral), carga en el Supercharger de Jaén (sin depender del Parador), Canela en Rama y Palacio de Gallego en Baeza, horario de domingo de los Baños Árabes corregido. v1.16 (8-nov-2026): Aparcamiento gratuito de La Alcantarilla como opción para la cena del viernes (Saber más). v1.15 (25-oct-2026): Retirado el aviso de la Sacra Capilla (horario oficial 9:30-19:00 confirmado). v1.14 (25-oct-2026): Motor 3.3.5 de la plantilla (sin el desplegable de previsión en Inicio). v1.13 (25-oct-2026): Motor 3.3.4 de la plantilla (sustituye los ajustes propios de Jaén); retirado el aviso de la misa de la Catedral (confirmado). v1.12 (25-oct-2026): Banner de Inicio compacto (número y texto en una línea, cifras en una fila de chips). v1.11 (25-oct-2026): Tiempo fusionado con el itinerario (icono y temperatura en la pastilla de cada día; sin tarjeta Tiempo en Inicio). v1.10 (25-oct-2026): Itinerario de Inicio como tarjetas por día. v1.9 (25-oct-2026): pendientes como checklist de solo lectura en orden de viaje, sin fechas; sin pendiente de maleta ni botones en la tarjeta del coche. v1.8 (25-oct-2026): motor 3.3.0 y datos migrados al modelo nuevo; Civitatis cerrado; sin desayuno; descripciones de restaurantes; teléfono del Parador; checklist de maleta.'},
 modules:{coche:true,dieta:false,supermercado:false,actividades:false,conversores:false,fauna:false,astro:false},
 places:{
 parador:{n:'Parador de Jaén',city:'Jaén',lat:37.76922,lng:-3.79028,q:'Parador de Jaén, Castillo de Santa Catalina, Jaén',tel:'+34953230000'},
@@ -140,7 +140,7 @@ items:[
 {t:'16:30',what:'Madrid → Jaén',k:'🚗',km:335,place:'charger',note:'≈3 h 15 min sin contar la carga (tu estimación). Standard Range: para a cargar en ruta donde te indique el coche (navegación de Tesla).'},
 {t:'Al llegar',what:'Carga en el Supercharger de Jaén Plaza',k:'⚡',place:'charger',note:'Unos 20-30 min (estimación; el coche indica el tiempo real). Sales cargado para el sábado.'},
 {t:'~21:00',what:'Llegada y check-in en el Parador de Jaén',in:1,place:'parador',learn:'castillo'},
-{t:'Cena',what:'Cena en el Parador o en el centro (coche o taxi)',meal:'cena',opts:['parador','gorrion','manchega','mangas'],est:'pendiente',todo:'cena-vie',learn:'aparcar',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan). En coche, aparca en La Alcantarilla (gratuito) y sube andando al centro; si vas a beber, mejor taxi.'}]},
+{t:'Cena',what:'Cena en el Parador o en el centro (coche o taxi)',meal:'cena',opts:['parador','gorrion','alfiler','manchega','mangas'],est:'pendiente',todo:'cena-vie',learn:'aparcar',note:'Bajar a pie de noche no es buena idea (unos 5 km y 250 m de desnivel, según tu plan). En coche, aparca en La Alcantarilla (gratuito) y sube andando al centro; si vas a beber, mejor taxi.'}]},
 {id:'sab',date:'2026-11-21',base:'ubeda',title:'Sábado 21 - Almazara, Baeza y Úbeda',note:'Aceite, Baeza y Úbeda. ≈120 km en el día.',tiempo:['baeza','ubeda','jaen'],
 lens:'Almazara: Sigma 18-50 f/2.8 (interior). Baeza y Úbeda de día: RF 18-150. Miradores y hora azul: Sigma 18-50 f/2.8. RF 100-400 solo si quieres comprimir el olivar desde el mirador.',planB:'Si llueve: acorta Baeza (Pópulo y Santa María) y haz Úbeda por dentro (Sacra Capilla y Palacio de las Cadenas).',
 items:[
@@ -148,12 +148,12 @@ items:[
 {t:'09:45',what:'Oleícola San Francisco (Begíjar)',k:'🫒',star:1,place:'oleicola',learn:'olivar',note:'Olivar, almazara tradicional y moderna, cata de 3 aceites. Hasta ~12:45. Calzado cómodo. Si te gusta, compra aceite al terminar.'},
 {t:'12:55',what:'Begíjar → Baeza',k:'🚗',km:7,note:'≈10 min.'},
 {t:'13:00',what:'Baeza con luz',k:'🏛️',place:'baeza',learn:'patrimonio',note:'Pópulo, Santa María, Palacio de Jabalquinto y Paseo de las Murallas. Catedral solo si abre; si no, por fuera.'},
-{t:'14:00',what:'Comida en Baeza',meal:'comida',opts:['canela','gallego','andres','rincon'],est:'pendiente',todo:'com-baeza'},
+{t:'14:15',what:'Comida en Baeza',meal:'comida',opts:['gallego','canela','andres','rincon'],est:'reservado',todo:'com-baeza'},
 {t:'15:30',what:'Baeza → Úbeda',k:'🚗',km:10},
 {t:'15:45',what:'Úbeda monumental',star:1,place:'ubeda',learn:'sacra',note:'Plaza Vázquez de Molina, Sacra Capilla del Salvador (≈60 min; abierta de 9:30 a 19:00, viernes y sábado), Palacio de las Cadenas y Calle Real.'},
 {t:'17:30',what:'Redonda de Miradores: puesta de sol y hora azul',star:1,blue:'mirador',place:'mirador',learn:'olivar',note:'Puesta {set}. Quédate hasta {b2}.'},
 {t:'18:45',what:'Tapeo en Misa de 12',opt:1,meal:'tapas',opts:['misa'],est:'pendiente',note:'Después de la hora azul, que termina hacia las {b2}.'},
-{t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural'],est:'pendiente',todo:'cena-sab'},
+{t:'20:30',what:'Cena en Úbeda (Cantina La Estación)',opt:1,meal:'cena',opts:['estacion','cultural','tintorera','botica','mama','calancha'],est:'pendiente',todo:'cena-sab'},
 {t:'Al final',what:'Vuelta al Parador',k:'🚗',km:60,place:'parador',note:'≈50 min. Si no cenas en Úbeda, sal tras el tapeo (~19:30). Con cena, será de noche cerrada.'}]},
 {id:'dom',date:'2026-11-22',base:'parador',title:'Domingo 22 - Jaén y vuelta a Madrid',note:'Jaén sin coche por la mañana y vuelta a Madrid.',tiempo:['jaen'],
 lens:'Baños Árabes (poca luz): Sigma 18-50 f/2.8. Exteriores de Jaén: RF 18-150. RF 100-400: no necesario.',planB:'Si la visita no entra en la Catedral, prioriza los Baños Árabes (abren el domingo hasta las 15:00).',
@@ -185,16 +185,21 @@ tipicos:[
 {n:'Aceite de oliva virgen extra',d:'El producto estrella de Jaén; lo normal es tomarlo mojado con pan.',src:'Guías Viajar',url:'https://guias-viajar.com/turismo-espana/visitar-andalucia/jaen-sierras-cazorla-segura-gastronomia/'}],
 rest:[
 {id:'parador',n:'Restaurante del Parador de Jaén',d:'Jaén',desc:'Cocina tradicional jiennense de raíces andaluzas, con aceite de oliva virgen extra, platos de cuchara y caza. Salón monumental con arcos de piedra y techos de madera.'},
+{id:'alfiler',n:'Ni un Alfiler Taberna Atelier',d:'Jaén',desc:'Taberna cuidada junto a la Catedral: conservas, vermut y tapas con la caña, en un ambiente tranquilo.'},
 {id:'gorrion',n:'Casa Gorrión',d:'Jaén',desc:'Taberna de quesos añejos, chacinas, paté de perdiz y pipirrana. Decoración tan peculiar que parece un museo.'},
 {id:'manchega',n:'La Manchega',d:'Jaén',desc:'Tasca de bocadillos contundentes, migas y tapas tradicionales a precios populares. Ambiente castizo, rústico y animado.'},
 {id:'mangas',n:'Mangas Verdes',d:'Jaén',desc:'Taberna gastronómica atípica: cocina de la provincia con toque personal y platos de vanguardia (Guía Michelin). Ambiente informal, con vinos por copas, cerca de la catedral.'},
 {id:'antonio',n:'Casa Antonio',d:'Jaén',desc:'Cocina de mercado y de temporada, tradicional con técnicas actuales, y menú degustación. Barra y terraza informales o salón principal más formal.'},
-{id:'canela',n:'Canela en Rama',d:'Baeza',desc:'Cocina de la zona con toque árabe y platos para compartir; ambiente animado y trato cercano. Primera opción para la comida del sábado.'},
-{id:'gallego',n:'Palacio de Gallego',d:'Baeza',desc:'Palacio con jardín interior y brasa de leña de olivo: carnes e ibéricos a la parrilla, tapas y buena carta de vinos. Algo más caro. Segunda opción.'},
+{id:'canela',n:'Canela en Rama',d:'Baeza',desc:'Cocina de la zona con toque árabe y platos para compartir; ambiente animado y trato cercano. Opción B para la comida del sábado, por si falla la reserva.'},
+{id:'gallego',n:'Palacio de Gallego',d:'Baeza',desc:'Palacio con jardín interior y brasa de leña de olivo: carnes e ibéricos a la parrilla, tapas y buena carta de vinos. Algo más caro. Reserva hecha para la comida del sábado.'},
 {id:'andres',n:'Casa Andrés',d:'Baeza',desc:'Taberna de cocina tradicional (ahumados, lagarto, alcachofas con jamón ibérico), con terraza y vistas al valle.'},
 {id:'rincon',n:'Rincón Baezano',d:'Baeza',desc:'Cocina tradicional con carta y un menú de tres platos muy completo.'},
 {id:'estacion',n:'Cantina La Estación',d:'Úbeda',desc:'Cocina de tradición y vanguardia (Guía Michelin), en un local decorado como un vagón de tren.'},
 {id:'cultural',n:'La Cultural',d:'Úbeda',desc:'Cocina andaluza en la antigua Casa de Cofradías: patio con columnas, salas, terraza y un pequeño teatro.'},
+{id:'tintorera',n:'Taberna La Tintorera',d:'Úbeda',desc:'Taberna informal en la calle Real con platos de siempre y toques originales (salmorejo con manzana, falso risotto, lasaña de berenjena). No admite reserva: mejor llegar pronto.'},
+{id:'botica',n:'Taberna La Botica',d:'Úbeda',desc:'Taberna de cocina regional en la calle Real; cada bebida viene con una tapa generosa. Terraza para ver el ambiente.'},
+{id:'mama',n:'Bar Mama Juana',d:'Úbeda',desc:'Taberna con estilo y cocina de tapas y raciones (flamenquín, puntillas, alcachofa con jamón). Carta corta; en días llenos conviene reservar.'},
+{id:'calancha',n:'La Calancha',d:'Úbeda',desc:'Bar de tapas con terraza en una plaza tranquila, con muy buen ambiente por la noche. Puede haber espera.'},
 {id:'misa',n:'Misa de 12 (tapas)',d:'Úbeda',desc:'Tapas tradicionales (lomo de orza, mojama, morcilla de caldera), citado como uno de los mejores sitios de tapeo de Úbeda.'}]},
 tiempo:{
 jaen:{n:'Jaén',place:'parador',url:'https://www.aemet.es/es/eltiempo/prediccion/municipios/jaen-id23050',horas:'https://www.aemet.es/es/eltiempo/prediccion/municipios/horas/tabla/jaen-id23050'},
@@ -211,7 +216,7 @@ castillo:{t:'Castillo de Santa Catalina y Parador',sum:'Fortaleza musulmana del 
 todos:[
 {id:'cena-vie',t:'Cena del viernes: reservar y avisar de llegada tardía (~21:30)',due:'2026-11-13',day:'vie'},
 {id:'civitatis',t:'Civitatis: punto de encuentro y si entráis en la Catedral el domingo (misa)',due:'2026-11-13',day:'dom',hecho:true},
-{id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:00)',due:'2026-11-10',day:'sab'},
+{id:'com-baeza',t:'Reservar comida del sábado en Baeza (14:15)',due:'2026-11-10',day:'sab',hecho:true},
 {id:'cena-sab',t:'Decidir y reservar cena del sábado: Úbeda o Parador',due:'2026-11-12',day:'sab'},
 {id:'com-dom',t:'Reservar comida del domingo en Jaén (13:00)',due:'2026-11-12',day:'dom'}],
 check:{
